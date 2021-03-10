@@ -1,0 +1,57 @@
+.container {
+	max-width: 1100px;
+	margin: auto;
+	overflow: hidden;
+	padding: 0 2rem;
+}
+.card {
+	padding: 1rem;
+	border: #ccc 1px dotted;
+	margin: 0.7rem 1rem;
+	img {
+		width: max-content;
+	}
+}
+
+.product {
+	padding: 24px;
+	font-size: 24px;
+}
+
+.productRow {
+	display: flex;
+}
+.productImg,
+.productCol {
+	flex: 1;
+}
+
+.productImg {
+	max-width: 50px;
+	margin: 25px;
+}
+
+/* Grid */
+.grid2 {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 2rem;
+}
+
+.grid3 {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 1rem;
+}
+
+.grid-4 {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 2rem;
+}
+
+.grid-2-3 {
+	display: grid;
+	grid-template-columns: 2fr 3fr;
+	grid-gap: 2rem;
+}
