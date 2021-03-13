@@ -18,14 +18,10 @@ export default function Merch({ products }) {
 			<div className={styles.grid3}>
 				{products &&
 					products.map((product) => (
-						<div className='card' style={{ width: '20rem' }}>
+						<div>
 							<Link href={`/products/${product.slug}`}>
 								<a>
-									<img
-										src={fromImagetoUrl(product.image)}
-										className='card-img-top'
-										alt='...'
-									/>
+									<img src={fromImagetoUrl(product.image)} alt='...' />
 									<div className='card-body'>
 										<p>${product.price}</p>
 										<h2 className='card-title'>{product.name}</h2>

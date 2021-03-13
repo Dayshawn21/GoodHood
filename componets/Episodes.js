@@ -1,6 +1,6 @@
-import axios from 'axios';
 import Link from 'next/link';
 import styles from '../styles/Home.module.scss';
+import stylesPodcast from '../styles/Podcast.module.scss';
 import { fromImagetoUrl, API_URL } from '../utils/urls';
 
 export default function Episodes({ podcasts }) {
@@ -23,9 +23,8 @@ export default function Episodes({ podcasts }) {
 										alt='...'
 									/>
 									<div className='card-body'>
-										<p>{podcast.upload}</p>
 										<h2 className='card-title'>{podcast.title}</h2>
-
+										<p>{podcast.upload}</p>
 										<a href='#' className='btn btn-primary'>
 											Go Listen
 										</a>
