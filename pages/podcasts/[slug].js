@@ -14,10 +14,12 @@ const Podcast = ({ podcast }) => {
 					<h1>
 						Episode {podcast.episode}&#58; {podcast.title}
 					</h1>
-					<p>Date {podcast.upload}</p>
-					<p className='lead'>{podcast.description}</p>
+					<p>
+						Date:{podcast.upload} Time:{podcast.time}
+					</p>
+					<p className='lead'>{podcast.description} </p>
 
-					<div className={homeStyles.socail}>
+					<div>
 						<a
 							href={podcast.apple}
 							type='button'

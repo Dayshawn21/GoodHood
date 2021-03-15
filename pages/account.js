@@ -33,7 +33,7 @@ const useOrders = (user, getToken) => {
 	return { orders, loading };
 };
 
-const Account = () => {
+const Account = ({ orders }) => {
 	const { user, logoutUser, getToken } = useContext(AuthContext);
 
 	const { orders, loading } = useOrders(user, getToken);
@@ -70,5 +70,19 @@ const Account = () => {
 		</div>
 	);
 };
+export async function getStaticProps() {
+	// Fetch Products
+
+	const order_res = await fetch(`${API_URL}/orders`);
+	const orders = await orders_res.json();
+
+	// return Products
+
+	return {
+		props: {
+			orders,
+		},
+	};
+}
 
 export default Account;

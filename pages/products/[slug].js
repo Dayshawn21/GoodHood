@@ -3,8 +3,7 @@ import BuyButton from '../../componets/BuyButton';
 
 const Product = ({ product }) => {
 	return (
-		<div>
-			<h3>{product.name}</h3>
+		<div className='container'>
 			<img src={fromImagetoUrl(product.image)} alt='' />
 			<h3>{product.name}</h3>
 			<p>

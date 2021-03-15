@@ -41,7 +41,7 @@ export default function Episodes({ podcasts }) {
 export async function getStaticProps() {
 	// Fetch Products
 
-	const podcast_res = await fetch(`${API_URL}/podcasts/`);
+	const podcast_res = await fetch(`${API_URL}/podcasts?_limit=3`);
 	const podcasts = await podcast_res.json();
 
 	// return Products
