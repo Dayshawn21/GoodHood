@@ -34,9 +34,9 @@ const useOrders = (user, getToken) => {
 };
 
 const Account = ({ orders }) => {
-	const { user, logoutUser, getToken } = useContext(AuthContext);
+	// const { user, logoutUser, getToken } = useContext(AuthContext);
 
-	const { orders, loading } = useOrders(user, getToken);
+	// const { orders, loading } = useOrders(user, getToken);
 
 	if (!user) {
 		return (

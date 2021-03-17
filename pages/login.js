@@ -3,8 +3,8 @@ import { useContext, useState } from 'react';
 import AuthContext from '../context/Auth/AuthContext';
 
 const Login = () => {
-	const [email, setEmail] = useState('');
-	const { loginUser } = useContext(AuthContext);
+	// const [email, setEmail] = useState('');
+	// const { loginUser } = useContext(AuthContext);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();

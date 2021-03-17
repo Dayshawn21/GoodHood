@@ -12,27 +12,26 @@ export default function Episodes({ podcasts }) {
 				</h1>
 			</div>
 			<div className={styles.grid3}>
-				{podcasts &&
-					podcasts.map((podcast) => (
-						<div className='text-center'>
-							<Link href={`/podcasts/${podcast.slug}`}>
-								<a>
-									<img
-										src={fromImagetoUrl(podcast.image)}
-										// className='card-img-top'
-										alt='...'
-									/>
-									<div className='card-body'>
-										<h2 className='card-title'>{podcast.title}</h2>
-										<p>{podcast.upload}</p>
-										<a href='#' className='btn btn-primary'>
-											Go Listen
-										</a>
-									</div>
-								</a>
-							</Link>
-						</div>
-					))}
+				{podcasts.map((podcast) => (
+					<div className='text-center'>
+						<Link href={`/podcasts/${podcast.slug}`}>
+							<a>
+								<img
+									src={fromImagetoUrl(podcast.image)}
+									// className='card-img-top'
+									alt='...'
+								/>
+								<div className='card-body'>
+									<h2 className='card-title'>{podcast.title}</h2>
+									<p>{podcast.upload}</p>
+									<a href='#' className='btn btn-primary'>
+										Go Listen
+									</a>
+								</div>
+							</a>
+						</Link>
+					</div>
+				))}
 			</div>
 		</div>
 	);
@@ -41,7 +40,7 @@ export default function Episodes({ podcasts }) {
 export async function getStaticProps() {
 	// Fetch Products
 
-	const podcast_res = await fetch(`${API_URL}/podcasts?_limit=3`);
+	const podcast_res = await fetch(`${API_URL}/podcasts/`);
 	const podcasts = await podcast_res.json();
 
 	// return Products

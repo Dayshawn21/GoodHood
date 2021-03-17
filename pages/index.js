@@ -27,7 +27,7 @@ export async function getStaticProps() {
 	const product_res = await fetch(`${API_URL}/products/`);
 	const products = await product_res.json();
 
-	const podcast_res = await fetch(`${API_URL}/podcasts?_limit=3/`);
+	const podcast_res = await fetch(`${API_URL}/podcasts?_limit=3`);
 	const podcasts = await podcast_res.json();
 
 	// return Products
