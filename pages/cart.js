@@ -1,43 +1,32 @@
+import { parseCookies } from 'nookies';
 import { API_URL } from '../utils/urls';
 
-const Cart = ({ cart, authData }) => {
-	console.log(cart, authData);
+const Cart = ({ orders }) => {
 	return (
 		<div>
 			<h1>Cart</h1>
+
+			{orders &&
+				orders.map((order) => (
+					<div>
+						{order.product.name} $ {order.total} {order.status}
+					</div>
+				))}
 		</div>
 	);
 };
 export async function getStaticProps() {
-	const loginInfo = {
-		identifier: 'test1@test.com',
-		password: 'dayday',
-	};
+	const jwt = parseCookies().jwt;
 
-	const login = await fetch(`${API_URL}/auth/local`, {
-		method: 'POST',
+	const order_res = await fetch(`${API_URL}/orders/`, {
 		headers: {
-			Accept: 'application/json',
-			'Content-Type': 'application/json',
-		},
-		body: JSON.stringify(loginInfo),
-	});
-
-	const loginResponse = await login.json();
-	// Fetch Products
-	const cart_res = await fetch(`${API_URL}/orders/`, {
-		headers: {
-			Authorization: `Bearer ${loginResponse.jwt}`,
+			Authorization: `Bearer ${jwt}`,
 		},
 	});
-	const cart = await cart_res.json();
-
-	// return Products
-
+	const orders = await order_res.json();
 	return {
 		props: {
-			cart,
-			authData: loginResponse,
+			orders,
 		},
 	};
 }

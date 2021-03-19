@@ -6,8 +6,11 @@ import Merch from '../componets/Merch';
 
 import { fromImagetoUrl, API_URL } from '../utils/urls';
 import Header from '../componets/Header';
+import { Router, useRouter } from 'next/router';
+import { parseCookies } from 'nookies';
 
-export default function Home({ products, podcasts }) {
+export default function Home({ products, podcasts, ctx }) {
+	const Router = useRouter();
 	return (
 		<div>
 			<Head>
@@ -21,8 +24,19 @@ export default function Home({ products, podcasts }) {
 	);
 }
 
+function redirectUsers(ctx, location) {
+	if (ctx.req) {
+		ctx.res.writeHead(302, { Location: location });
+		ctx.res.end();
+	} else {
+		Router.push(location);
+	}
+}
+
 export async function getStaticProps() {
 	// Fetch Products
+
+	const jwt = parseCookies().jwt;
 
 	const product_res = await fetch(`${API_URL}/products/`);
 	const products = await product_res.json();
@@ -30,12 +44,21 @@ export async function getStaticProps() {
 	const podcast_res = await fetch(`${API_URL}/podcasts?_limit=3`);
 	const podcasts = await podcast_res.json();
 
+	const orders_res = await fetch(`${API_URL}/orders`);
+	const orders = await orders_res.json();
+
+	if (!jwt) {
+		if (Router.pathname === '/cart') {
+			redirectUsers('/login');
+		}
+	}
 	// return Products
 
 	return {
 		props: {
 			products,
 			podcasts,
+			orders,
 		},
 	};
 }

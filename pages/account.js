@@ -73,7 +73,7 @@ const Account = ({ orders }) => {
 export async function getStaticProps() {
 	// Fetch Products
 
-	const order_res = await fetch(`${API_URL}/orders`);
+	const orders_res = await fetch(`${API_URL}/orders`);
 	const orders = await orders_res.json();
 
 	// return Products
