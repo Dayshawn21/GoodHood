@@ -1,6 +1,7 @@
 import Head from 'next/head';
-import Link from 'next/link';
-import styles from '../styles/Home.module.scss';
+import ProductContext from '../context/Product/ProductContext';
+import { useContext, useState } from 'react';
+
 import Espisodes from '../componets/Episodes';
 import Merch from '../componets/Merch';
 
@@ -9,8 +10,9 @@ import Header from '../componets/Header';
 import { Router, useRouter } from 'next/router';
 import { parseCookies } from 'nookies';
 
-export default function Home({ products, podcasts, ctx }) {
+const Home = ({ podcasts, products }) => {
 	const Router = useRouter();
+
 	return (
 		<div>
 			<Head>
@@ -22,23 +24,13 @@ export default function Home({ products, podcasts, ctx }) {
 			<Merch products={products}></Merch>
 		</div>
 	);
-}
+};
 
-function redirectUsers(ctx, location) {
-	if (ctx.req) {
-		ctx.res.writeHead(302, { Location: location });
-		ctx.res.end();
-	} else {
-		Router.push(location);
-	}
-}
-
-export async function getStaticProps() {
+export const getStaticProps = async () => {
 	// Fetch Products
 
 	const jwt = parseCookies().jwt;
-
-	const product_res = await fetch(`${API_URL}/products/`);
+	const product_res = await fetch(`${API_URL}/products?_limit=3`);
 	const products = await product_res.json();
 
 	const podcast_res = await fetch(`${API_URL}/podcasts?_limit=3`);
@@ -61,4 +53,6 @@ export async function getStaticProps() {
 			orders,
 		},
 	};
-}
+};
+
+export default Home;

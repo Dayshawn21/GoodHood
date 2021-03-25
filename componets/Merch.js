@@ -1,11 +1,12 @@
 import Head from 'next/head';
+import { useContext, useEffect, useState } from 'react';
 import Link from 'next/link';
 import styles from '../styles/Home.module.scss';
-import Espisodes from '../componets/Episodes';
 
-import { fromImagetoUrl, API_URL } from '../utils/urls';
+import { fromImagetoUrl } from '../utils/urls';
+import ProductContext from '../context/Product/ProductContext';
 
-export default function Merch({ products }) {
+const Merch = ({ products }) => {
 	return (
 		<div className='container'>
 			<Head>
@@ -37,19 +38,6 @@ export default function Merch({ products }) {
 			</div>
 		</div>
 	);
-}
+};
 
-export async function getStaticProps() {
-	// Fetch Products
-
-	const product_res = await fetch(`${API_URL}/products/`);
-	const products = await product_res.json();
-
-	// return Products
-
-	return {
-		props: {
-			products,
-		},
-	};
-}
+export default Merch;

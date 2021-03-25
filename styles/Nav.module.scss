@@ -7,17 +7,19 @@
 	padding: 0.7rem 2rem;
 	z-index: 1;
 	width: 100%;
-
+	background: #5c5959;
+	color: white;
 	opacity: 0.9;
 
 	i {
-		font-size: 2rem;
+		font-size: 2.3rem;
 		padding: 0.45rem;
 		margin: 0 0.25rem;
 	}
 
 	ul {
 		display: flex;
+		align-items: center;
 	}
 	h1 {
 		padding: 0.45rem;
@@ -31,15 +33,5 @@
 	}
 	a:hover {
 		color: $lightColor;
-	}
-	.middle {
-		li {
-			padding-top: 1rem;
-		}
-	}
-	.right {
-		li {
-			padding-top: 0.5rem;
-		}
 	}
 }

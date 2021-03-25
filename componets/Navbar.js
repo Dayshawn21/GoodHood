@@ -19,68 +19,63 @@ const Navbar = () => {
 	return (
 		<>
 			<nav className={navStyles.navbar}>
-				<div>
-					<ul>
-						<li>
-							<a href='https://www.facebook.com/goodinthehoodpod'>
-								<i className='fab fa-facebook-square'></i>
+				<ul>
+					<li>
+						<Link href='/'>
+							<a>
+								<Image
+									src='/PURPLE_360x.jpg'
+									alt='Picture of the author'
+									width={80}
+									height={80}
+								/>
 							</a>
-						</li>
-						<li>
-							<a href='https://twitter.com/goodinallhoods'>
-								<i className='fab fa-twitter'></i>
-							</a>
-						</li>
-						<li>
-							<a href='https://www.instagram.com/goodinthehoodpod/'>
-								<i className='fab fa-instagram'></i>
-							</a>
-						</li>
-					</ul>
-				</div>
-
-				<div>
-					<Link href='/'>
-						<a>
-							<Image
-								src='/PURPLE_360x.jpg'
-								alt='Picture of the author'
-								width={100}
-								height={100}
-							/>
+						</Link>
+					</li>
+					<li>
+						<a href='https://www.facebook.com/goodinthehoodpod'>
+							<i className='fab fa-facebook-square'></i>
 						</a>
-					</Link>
-				</div>
+					</li>
+					<li>
+						<a href='https://twitter.com/goodinallhoods'>
+							<i className='fab fa-twitter'></i>
+						</a>
+					</li>
+					<li>
+						<a href='https://www.instagram.com/goodinthehoodpod/'>
+							<i className='fab fa-instagram'></i>
+						</a>
+					</li>
+				</ul>
 
-				<div>
-					<ul className={navStyles.right}>
-						<li>
-							<Link href='/contact'>Episodes </Link>
-						</li>
-						<li>
-							<Link href='/contact'>Merch </Link>
-						</li>
-						<li>
-							<Link href='/contact'> Contact </Link>
-						</li>
-						<li>
-							{user ? (
-								<Link href='/account'>
-									<a>{user.email}</a>
-								</Link>
-							) : (
-								<Link href='login'>
-									<a> Login</a>
-								</Link>
-							)}
-						</li>
-						<li>
-							<Link href='/cart'>
-								<i class='fas fa-shopping-cart'></i>
+				<ul>
+					<li>
+						<Link href='/Episodes'>Episodes </Link>
+					</li>
+					<li>
+						<Link href='/Merch'>Merch </Link>
+					</li>
+					<li>
+						<Link href='/contact'> Contact </Link>
+					</li>
+					<li>
+						{user ? (
+							<Link href='/account'>
+								<a>{user.email}</a>
 							</Link>
-						</li>
-					</ul>
-				</div>
+						) : (
+							<Link href='login'>
+								<a> Login</a>
+							</Link>
+						)}
+					</li>
+					<li>
+						<Link href='/cart'>
+							<i class='fas fa-shopping-cart'></i>
+						</Link>
+					</li>
+				</ul>
 			</nav>
 		</>
 	);

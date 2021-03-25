@@ -1,53 +1,26 @@
+import { useContext } from 'react';
 import Link from 'next/link';
-import styles from '../styles/Home.module.scss';
-import stylesPodcast from '../styles/Podcast.module.scss';
-import { fromImagetoUrl, API_URL } from '../utils/urls';
 
-export default function Episodes({ podcasts }) {
+import ProductContext from '../context/Product/ProductContext';
+import styles from '../styles/Home.module.scss';
+import { fromImagetoUrl } from '../utils/urls';
+import EspCard from './EspCard';
+
+const Episodes = ({ podcasts }) => {
 	return (
-		<div className='container'>
+		<section className='container'>
 			<div className='py-4'>
 				<h1 className='text-center'>
 					<u> Latest Episodes </u>
 				</h1>
 			</div>
 			<div className={styles.grid3}>
-				{podcasts.map((podcast) => (
-					<div className='text-center'>
-						<Link href={`/podcasts/${podcast.slug}`}>
-							<a>
-								<img
-									src={fromImagetoUrl(podcast.image)}
-									// className='card-img-top'
-									alt='...'
-								/>
-								<div className='card-body'>
-									<h2 className='card-title'>{podcast.title}</h2>
-									<p>{podcast.upload}</p>
-									<a href='#' className='btn btn-primary'>
-										Go Listen
-									</a>
-								</div>
-							</a>
-						</Link>
-					</div>
-				))}
+				{podcasts && podcasts.map((podcast) => <EspCard podcast={podcast} />)}
 			</div>
-		</div>
+			<Link href='/Episodes'>
+				<a>More Episodes </a>
+			</Link>
+		</section>
 	);
-}
-
-export async function getStaticProps() {
-	// Fetch Products
-
-	const podcast_res = await fetch(`${API_URL}/podcasts/`);
-	const podcasts = await podcast_res.json();
-
-	// return Products
-
-	return {
-		props: {
-			podcasts,
-		},
-	};
-}
+};
+export default Episodes;

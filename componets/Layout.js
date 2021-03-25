@@ -1,5 +1,6 @@
 import Nav from './Navbar';
 import Footer from './Footer.js';
+
 const Layout = ({ children }) => {
 	return (
 		<>
