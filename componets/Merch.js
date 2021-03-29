@@ -5,6 +5,7 @@ import styles from '../styles/Home.module.scss';
 
 import { fromImagetoUrl } from '../utils/urls';
 import ProductContext from '../context/Product/ProductContext';
+import MerchCard from './MerchCard';
 
 const Merch = ({ products }) => {
 	return (
@@ -14,27 +15,15 @@ const Merch = ({ products }) => {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
-			<h1 className='text-center py-3'>Merch </h1>
+			<h1 className='text-center py-4'>Merch </h1>
 
 			<div className={styles.grid3}>
-				{products &&
-					products.map((product) => (
-						<div>
-							<Link href={`/products/${product.slug}`}>
-								<a>
-									<img src={fromImagetoUrl(product.image)} alt='...' />
-									<div className='card-body'>
-										<p>${product.price}</p>
-										<h2 className='card-title'>{product.name}</h2>
-
-										<a href='#' className='btn btn-primary'>
-											Go Buy
-										</a>
-									</div>
-								</a>
-							</Link>
-						</div>
-					))}
+				{products && products.map((product) => <MerchCard product={product} />)}
+			</div>
+			<div className='py-3 text-center'>
+				<Link href='/Merch'>
+					<a className='btn btn-primary btn-lg '>More Merch </a>
+				</Link>
 			</div>
 		</div>
 	);

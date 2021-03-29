@@ -17,9 +17,11 @@ const Episodes = ({ podcasts }) => {
 			<div className={styles.grid3}>
 				{podcasts && podcasts.map((podcast) => <EspCard podcast={podcast} />)}
 			</div>
-			<Link href='/Episodes'>
-				<a>More Episodes </a>
-			</Link>
+			<div className='py-3 text-center'>
+				<Link href='/Episodes'>
+					<a className='btn btn-primary btn-lg '>More Episodes </a>
+				</Link>
+			</div>
 		</section>
 	);
 };

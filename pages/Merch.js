@@ -1,10 +1,14 @@
-import Merch from '../componets/Merch';
+import MerchCard from '../componets/MerchCard';
 import { API_URL } from '../utils/urls';
 
 const Merchs = ({ products }) => {
 	return (
 		<div>
-			<Merch products={products} />
+			<h1 className='text-center py-4'>Merch </h1>
+
+			<div>
+				{products && products.map((product) => <MerchCard product={product} />)}
+			</div>
 		</div>
 	);
 };

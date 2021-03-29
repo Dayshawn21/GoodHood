@@ -13,6 +13,7 @@ import BuyButton from '../../componets/BuyButton';
 
 const Product = ({ product }) => {
 	const [qty, setQty] = useState(1);
+	const [color, setColor] = useState([]);
 	return (
 		<div className='py-3'>
 			<Row>
@@ -40,23 +41,34 @@ const Product = ({ product }) => {
 								</Row>
 							</ListGroup.Item>
 
-							<ListGroup.Item>
-								<Row>
-									<Col>QTY</Col>
-									<Col>
-										<Form.Control
-											as='select'
-											value={qty}
-											onChange={(e) => setQty(e.target.value)}
-										></Form.Control>
-									</Col>
-								</Row>
-							</ListGroup.Item>
+							{product.countInStock > 0 && (
+								<ListGroup.Item>
+									<Row>
+										<Col> QTY</Col>
+										<Col>
+											<Form.Control
+												as='select'
+												value={qty}
+												onChange={(e) => setQty(e.target.value)}
+											>
+												{[...Array(product.countInStock).keys()].map((x) => (
+													<option key={x + 1} value={x + 1}>
+														{' '}
+														{x + 1}
+													</option>
+												))}
+											</Form.Control>
+										</Col>
+									</Row>
+								</ListGroup.Item>
+							)}
 
 							<ListGroup.Item>
 								<Row>
 									<Col>Status:</Col>
-									<Col></Col>
+									<Col>
+										{product.countInStock > 0 ? ' In Stock' : 'Out of Stock'}
+									</Col>
 								</Row>
 							</ListGroup.Item>
 
