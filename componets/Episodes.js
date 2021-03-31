@@ -9,18 +9,17 @@ import EspCard from './EspCard';
 const Episodes = ({ podcasts }) => {
 	return (
 		<section className='container'>
-			<div className='py-4'>
-				<h1 className='text-center'>
-					<u> Latest Episodes </u>
-				</h1>
-			</div>
-			<div className={styles.grid3}>
-				{podcasts && podcasts.map((podcast) => <EspCard podcast={podcast} />)}
-			</div>
-			<div className='py-3 text-center'>
-				<Link href='/Episodes'>
-					<a className='btn btn-primary btn-lg '>More Episodes </a>
-				</Link>
+			<div className={styles.esp}>
+				<h2>Latest Episodes</h2>
+
+				<div className={styles.grid3}>
+					{podcasts && podcasts.map((podcast) => <EspCard podcast={podcast} />)}
+				</div>
+				<div className='py-3 text-center'>
+					<Link href='/Episodes'>
+						<a className='btn btn-primary btn-lg '>More Episodes </a>
+					</Link>
+				</div>
 			</div>
 		</section>
 	);

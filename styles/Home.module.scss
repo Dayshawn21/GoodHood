@@ -4,32 +4,6 @@
 	overflow: hidden;
 	padding: 0 2rem;
 }
-.card {
-	padding: 1rem;
-	border: #ccc 1px dotted;
-	margin: 0.7rem 1rem;
-	img {
-		width: max-content;
-	}
-}
-
-.product {
-	padding: 24px;
-	font-size: 24px;
-}
-
-.productRow {
-	display: flex;
-}
-.productImg,
-.productCol {
-	flex: 1;
-}
-
-.productImg {
-	max-width: 50px;
-	margin: 25px;
-}
 
 /* Grid */
 .grid2 {
@@ -41,7 +15,8 @@
 .grid3 {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	grid-gap: 1rem;
+	grid-gap: 2rem;
+	justify-content: space-around;
 }
 
 .grid-4 {
@@ -54,4 +29,33 @@
 	display: grid;
 	grid-template-columns: 2fr 3fr;
 	grid-gap: 2rem;
+}
+
+.merch {
+	padding-top: 4rem;
+	h2 {
+		text-align: center;
+		font-size: 4rem;
+		text-decoration: underline;
+	}
+	h3 {
+		font-size: 2.5rem;
+	}
+	p {
+		font-size: 1.5rem;
+	}
+}
+.esp {
+	padding-top: 4rem;
+	h2 {
+		text-align: center;
+		font-size: 4rem;
+		text-decoration: underline;
+	}
+	h3 {
+		font-size: 2.5rem;
+	}
+	p {
+		font-size: 1.5rem;
+	}
 }

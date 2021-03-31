@@ -4,7 +4,7 @@ import { Image } from 'react-bootstrap';
 
 const EspCard = ({ podcast }) => {
 	return (
-		<div className='text-center'>
+		<div className='text-center py-3'>
 			<Link href={`/podcasts/${podcast.slug}`}>
 				<a>
 					<Image
@@ -13,9 +13,9 @@ const EspCard = ({ podcast }) => {
 						fluid
 					/>
 					<div className='card-body'>
-						<h2 className='card-title'>{podcast.title}</h2>
+						<h3 className='card-title'>{podcast.title}</h3>
 						<p>{podcast.upload}</p>
-						<a href='#' className='btn btn-primary'>
+						<a href='#' className='btn btn-primary btn-lg'>
 							Go Listen
 						</a>
 					</div>

@@ -3,15 +3,15 @@ import Link from 'next/link';
 
 const MerchCard = ({ product }) => {
 	return (
-		<div>
+		<div className='py-3'>
 			<Link href={`/products/${product.slug}`}>
 				<a>
 					<img src={fromImagetoUrl(product.image)} alt='...' />
-					<div className='card-body'>
+					<div className='card-body text-center'>
+						<h3 className='card-title'>{product.name}</h3>
 						<p>${product.price}</p>
-						<h2 className='card-title'>{product.name}</h2>
 
-						<a href='#' className='btn btn-primary'>
+						<a href='#' className='btn btn-primary btn-lg'>
 							Go Buy
 						</a>
 					</div>
