@@ -1,3 +1,4 @@
+@import './variable.scss';
 .container {
 	max-width: 1100px;
 	margin: auto;
@@ -44,6 +45,9 @@
 	p {
 		font-size: 1.5rem;
 	}
+	a {
+		font-size: 1.5rem;
+	}
 }
 .esp {
 	padding-top: 4rem;
@@ -57,5 +61,22 @@
 	}
 	p {
 		font-size: 1.5rem;
+	}
+	a {
+		font-size: 1.5rem;
+	}
+}
+
+.spod {
+	h2 {
+		font-size: 3rem;
+		color: white;
+	}
+
+	a {
+		margin: 0.5rem;
+		font-size: 1.5rem;
+		border-radius: 12px;
+		color: $lightColor;
 	}
 }

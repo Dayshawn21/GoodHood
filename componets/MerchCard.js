@@ -12,7 +12,7 @@ const MerchCard = ({ product }) => {
 						<p>${product.price}</p>
 
 						<a href='#' className='btn btn-primary btn-lg'>
-							Go Buy
+							Buy
 						</a>
 					</div>
 				</a>

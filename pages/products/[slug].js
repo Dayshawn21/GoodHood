@@ -22,17 +22,21 @@ const Product = ({ product }) => {
 				</Col>
 				<Col md={3}>
 					<ListGroup variant='flush'>
-						<ListGroup.Item>
+						<ListGroup.Item variant='secondary'>
 							<h3>{product.name}</h3>
 						</ListGroup.Item>
-						<ListGroup.Item>Price: ${product.price}</ListGroup.Item>
-						<ListGroup.Item>Description: {product.description}</ListGroup.Item>
+						<ListGroup.Item variant='secondary'>
+							Price: ${product.price}
+						</ListGroup.Item>
+						<ListGroup.Item variant='secondary'>
+							Description: {product.description}
+						</ListGroup.Item>
 					</ListGroup>
 				</Col>
 				<Col Col md={3}>
 					<Card>
 						<ListGroup variant='flush'>
-							<ListGroup.Item>
+							<ListGroup.Item variant='secondary'>
 								<Row>
 									<Col>Price:</Col>
 									<Col>
@@ -42,7 +46,7 @@ const Product = ({ product }) => {
 							</ListGroup.Item>
 
 							{product.countInStock > 0 && (
-								<ListGroup.Item>
+								<ListGroup.Item variant='secondary'>
 									<Row>
 										<Col> QTY</Col>
 										<Col>
@@ -63,7 +67,7 @@ const Product = ({ product }) => {
 								</ListGroup.Item>
 							)}
 
-							<ListGroup.Item>
+							<ListGroup.Item variant='secondary'>
 								<Row>
 									<Col>Status:</Col>
 									<Col>
@@ -72,7 +76,7 @@ const Product = ({ product }) => {
 								</Row>
 							</ListGroup.Item>
 
-							<ListGroup.Item>
+							<ListGroup.Item variant='secondary'>
 								<Button
 									variant='main'
 									className='btn-block button-color'

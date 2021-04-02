@@ -1,15 +1,19 @@
 import MerchCard from '../componets/MerchCard';
 import { API_URL } from '../utils/urls';
+import merchStyle from '../styles/Merch.module.scss';
 
 const Merchs = ({ products }) => {
 	return (
-		<div>
-			<h1 className='text-center py-4'>Merch </h1>
+		<section className='container'>
+			<div className={merchStyle.merch}>
+				<h1 className='text-center py-4'>Merch </h1>
 
-			<div>
-				{products && products.map((product) => <MerchCard product={product} />)}
+				<div className={merchStyle.grid}>
+					{products &&
+						products.map((product) => <MerchCard product={product} />)}
+				</div>
 			</div>
-		</div>
+		</section>
 	);
 };
 export const getStaticProps = async () => {

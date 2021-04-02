@@ -16,7 +16,7 @@ const EspCard = ({ podcast }) => {
 						<h3 className='card-title'>{podcast.title}</h3>
 						<p>{podcast.upload}</p>
 						<a href='#' className='btn btn-primary btn-lg'>
-							Go Listen
+							Listen
 						</a>
 					</div>
 				</a>
