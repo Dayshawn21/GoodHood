@@ -1,13 +1,15 @@
 @import './variable.scss';
 .hero {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-		url('../public/img/download\ \(1\).jpg');
+		url('../public/mic.jpg');
 
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	position: relative;
+	overflow: hidden;
 	height: 75vh;
+	width: 100%;
 }
 .heroText {
 	text-align: center;

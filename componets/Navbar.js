@@ -4,8 +4,9 @@ import navStyles from '../styles/Nav.module.scss';
 import AuthContext from '../context/Auth/AuthContext';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
+import { Navbar } from 'react-bootstrap';
 
-const Navbar = () => {
+const Navbars = () => {
 	const router = useRouter();
 
 	const isHome = router.pathname === '/';
@@ -28,6 +29,7 @@ const Navbar = () => {
 									alt='Picture of the author'
 									width={80}
 									height={80}
+									layout='intrinsic'
 								/>
 							</a>
 						</Link>
@@ -81,4 +83,4 @@ const Navbar = () => {
 	);
 };
 
-export default Navbar;
+export default Navbars;

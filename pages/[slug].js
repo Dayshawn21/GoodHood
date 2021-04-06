@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { fromImagetoUrl, API_URL } from '../../utils/urls';
+import { fromImagetoUrl, API_URL } from '../utils/urls';
 import {
 	Row,
 	Col,
@@ -9,11 +9,12 @@ import {
 	Button,
 	Form,
 } from 'react-bootstrap';
-import BuyButton from '../../componets/BuyButton';
+import BuyButton from '../componets/BuyButton';
 
 const Product = ({ product }) => {
 	const [qty, setQty] = useState(1);
 	const [color, setColor] = useState([]);
+
 	return (
 		<div className='py-3'>
 			<Row>
@@ -66,6 +67,21 @@ const Product = ({ product }) => {
 									</Row>
 								</ListGroup.Item>
 							)}
+
+							<ListGroup.Item variant='secondary'>
+								<Row>
+									<Col> Color</Col>
+									<Col>
+										<Form.Control
+											as='select'
+											value={color}
+											onChange={(e) => setColor(e.target.value)}
+										>
+											<option value={product.color}>{product.color}</option>
+										</Form.Control>
+									</Col>
+								</Row>
+							</ListGroup.Item>
 
 							<ListGroup.Item variant='secondary'>
 								<Row>

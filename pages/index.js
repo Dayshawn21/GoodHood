@@ -1,27 +1,29 @@
 import Head from 'next/head';
-import ProductContext from '../context/Product/ProductContext';
-import { useContext, useState } from 'react';
-
+import commerce from '../lib/commerce';
 import Espisodes from '../componets/Episodes';
 import Merch from '../componets/Merch';
 
 import { fromImagetoUrl, API_URL } from '../utils/urls';
 import Header from '../componets/Header';
 import { Router, useRouter } from 'next/router';
+import ProductList from '../componets/ProductList';
+import CategoryList from '../componets/CategoryList';
 import { parseCookies } from 'nookies';
+import Link from 'next/link';
 
-const Home = ({ podcasts, products }) => {
+const Home = ({ podcasts, products, merchant, categories }) => {
 	const Router = useRouter();
 
 	return (
 		<div>
 			<Head>
-				<title>Create Next App</title>
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 			<Header></Header>
 			<Espisodes podcasts={podcasts}></Espisodes>
-			<Merch products={products}></Merch>
+
+			<CategoryList categories={categories} />
+			<ProductList products={products} />
 		</div>
 	);
 };
@@ -29,9 +31,9 @@ const Home = ({ podcasts, products }) => {
 export const getStaticProps = async () => {
 	// Fetch Products
 
-	const jwt = parseCookies().jwt;
-	const product_res = await fetch(`${API_URL}/products?_limit=3`);
-	const products = await product_res.json();
+	const merchant = await commerce.merchants.about();
+	const { data: categories } = await commerce.categories.list();
+	const { data: products } = await commerce.products.list();
 
 	const podcast_res = await fetch(`${API_URL}/podcasts?_limit=3`);
 	const podcasts = await podcast_res.json();
@@ -39,15 +41,12 @@ export const getStaticProps = async () => {
 	const orders_res = await fetch(`${API_URL}/orders`);
 	const orders = await orders_res.json();
 
-	if (!jwt) {
-		if (Router.pathname === '/cart') {
-			redirectUsers('/login');
-		}
-	}
 	// return Products
 
 	return {
 		props: {
+			merchant,
+			categories,
 			products,
 			podcasts,
 			orders,
