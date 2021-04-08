@@ -35,3 +35,21 @@
 		color: $lightColor;
 	}
 }
+
+@media only screen and (max-width: 600px) {
+	.hero {
+		.socail {
+			h2 {
+				font-size: 2rem;
+				color: white;
+			}
+
+			a {
+				margin: 0.5rem;
+				font-size: 1.5rem;
+				border-radius: 12px;
+				color: $lightColor;
+			}
+		}
+	}
+}
