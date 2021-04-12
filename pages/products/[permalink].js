@@ -1,6 +1,11 @@
-import commerce from '../../lib/commerce';
+import { commerce } from '../../lib/commerce';
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { toast } from 'react-toastify';
 import VariantPicker from '../../componets/VariantSelector';
+import { useCartDispatch } from '../../context/cart';
+
+import { useModalDispatch } from '../../context/model';
 
 import {
 	Row,
@@ -13,12 +18,14 @@ import {
 } from 'react-bootstrap';
 
 const ProductPage = ({ product }) => {
+	const { setCart } = useCartDispatch();
 	const {
 		variant_groups: variantGroups,
 		assets,
 		meta,
 		related_products: relatedProducts,
 	} = product;
+	const { openModal } = useModalDispatch();
 	const initialVariants = React.useMemo(
 		() =>
 			variantGroups.reduce((all, { id, options }) => {
@@ -38,13 +45,32 @@ const ProductPage = ({ product }) => {
 			...selectedVariants,
 			[id]: value,
 		});
+	const addToCart = () =>
+		commerce.cart
+			.add(product.id, 1, selectedVariants)
+			.then(({ cart }) => {
+				setCart(cart);
+
+				return cart;
+			})
+			.then(({ subtotal }) =>
+				toast(
+					`${product.name} is now in your cart. Your subtotal is now ${subtotal.formatted_with_symbol}. Click to view what's in your cart.`,
+					{
+						onClick: openModal,
+					},
+				),
+			)
+			.catch(() => {
+				toast.error('Please try again.');
+			});
 
 	const [qty, setQty] = useState(1);
 
 	return (
-		<div className='p-4'>
+		<div className='p-4 '>
 			<Row>
-				<Col md={6}>
+				<Col md={5}>
 					<Image src={product.media.source} alt={product.name} fluid />
 				</Col>
 				<Col md={3}>
@@ -92,16 +118,19 @@ const ProductPage = ({ product }) => {
 								<Row>
 									<Col>Status:</Col>
 									<Col>
-										{product.countInStock > 0 ? ' In Stock' : 'Out of Stock'}
+										{product.inventory.available > 0
+											? ' In Stock'
+											: 'Out of Stock'}
 									</Col>
 								</Row>
 							</ListGroup.Item>
 
 							<ListGroup.Item variant='secondary'>
 								<Button
-									variant='main'
+									variant='primary'
 									className='btn-block button-color'
 									type='button'
+									onClick={addToCart}
 								>
 									Add to Cart
 								</Button>

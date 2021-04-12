@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import commerce from '../lib/commerce';
+import { commerce } from '../lib/commerce';
 import Espisodes from '../componets/Episodes';
 import Merch from '../componets/Merch';
 

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useContext } from 'react';
 import navStyles from '../styles/Nav.module.scss';
-import AuthContext from '../context/Auth/AuthContext';
+
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { Navbar, Nav } from 'react-bootstrap';
@@ -16,10 +16,9 @@ const Navbars = () => {
 		router.back();
 	};
 
-	const { user } = useContext(AuthContext);
 	return (
 		<div>
-			<Navbar bg='light'>
+			<Navbar bg='light' expand='lg' className='justify-content-center'>
 				<Navbar.Brand href='/'>
 					<Image
 						src='/PURPLE_360x.jpg'
@@ -32,7 +31,7 @@ const Navbars = () => {
 
 				<Navbar.Toggle aria-controls='responsive-navbar-nav' />
 				<Navbar.Collapse id='responsive-navbar-nav'>
-					<Nav className='justify-content-end' as='ul'>
+					<Nav as='ul'>
 						<Nav.Item as='li'>
 							<Nav.Link href='/Merch'>Merch</Nav.Link>
 						</Nav.Item>

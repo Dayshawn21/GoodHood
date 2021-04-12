@@ -1,7 +1,6 @@
 import { useContext } from 'react';
 import Link from 'next/link';
 
-import ProductContext from '../context/Product/ProductContext';
 import styles from '../styles/Home.module.scss';
 import { fromImagetoUrl } from '../utils/urls';
 import EspCard from './EspCard';
