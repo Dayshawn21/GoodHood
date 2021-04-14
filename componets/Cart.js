@@ -1,5 +1,5 @@
 import { useCartState } from '../context/cart';
-import { useModalDispatch } from '../context/modal';
+import { useModalDispatch } from '../context/model';
 
 import { Button } from 'react-bootstrap';
 import CartItem from './CartItem';

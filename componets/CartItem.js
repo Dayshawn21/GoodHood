@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
+import { Image } from 'react-bootstrap';
 import { toast } from 'react-toastify';
 
 import { commerce } from '../lib/commerce';

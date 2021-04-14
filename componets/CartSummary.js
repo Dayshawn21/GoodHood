@@ -1,5 +1,5 @@
 import { useCartState } from '../context/cart';
-import { useModalDispatch } from '../context/modal';
+import { useModalDispatch } from '../context/model';
 
 function CartSummary() {
 	const { total_unique_items } = useCartState();
