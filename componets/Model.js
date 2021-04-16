@@ -2,13 +2,13 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { AnimatePresence, motion } from 'framer-motion';
 
-import { useModalState, useModalDispatch } from '../context/modal';
+import { useModalState, useModalDispatch } from '../context/model';
 import { useCheckoutDispatch } from '../context/checkout';
 import { useCartState } from '../context/cart';
 
 import Breadcrumbs from './Breadcrumbs';
 import Cart from './Cart';
-import Checkout from './Checkout';
+import Checkout from './Checkout.js';
 
 function CurrentStep({ step }) {
 	const { id } = useCartState();

@@ -2,7 +2,7 @@ import cc from 'classcat';
 
 import { useCheckoutState } from '../../context/checkout';
 
-import Button from '../Button';
+import { Button } from 'react-bootstrap';
 
 function CheckoutSummary({ subtotal, tax, shipping, line_items = [], total }) {
 	const { processing, error } = useCheckoutState();
