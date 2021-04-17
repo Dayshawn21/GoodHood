@@ -8,7 +8,7 @@ import { useCartState } from '../context/cart';
 
 import Breadcrumbs from './Breadcrumbs';
 import Cart from './Cart';
-import Checkout from './Checkout.js';
+import Checkout from './Checkout';
 
 function CurrentStep({ step }) {
 	const { id } = useCartState();

@@ -24,7 +24,7 @@ function FormCheckbox({
 				className='flex items-center cursor-pointer w-full'
 			>
 				<input
-					ref={register({ required: isRequired, ...validation })}
+					{...register('Name')}
 					id={props.id || name}
 					name={name}
 					type='checkbox'

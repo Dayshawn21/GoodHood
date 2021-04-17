@@ -11,9 +11,9 @@ import { ThemeProvider } from '../context/theme';
 import '../styles/globals.scss';
 import Modal from '../componets/Model';
 
-import { STRIPE_PK } from '../utils/urls';
+import { NEXT_PUBLIC_STRIPE_PK } from '../utils/urls';
 
-const stripePromise = loadStripe(STRIPE_PK);
+const stripePromise = loadStripe(NEXT_PUBLIC_STRIPE_PK);
 const toastOptions = {
 	position: 'bottom-center',
 	draggable: false,
@@ -21,7 +21,7 @@ const toastOptions = {
 	className: 'w-full md:max-w-xl',
 	toastClassName: 'bg-ecru-white rounded-lg text-black px-3 shadow-md',
 };
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, router }) {
 	return (
 		<Elements
 			stripe={stripePromise}
@@ -41,7 +41,7 @@ function MyApp({ Component, pageProps }) {
 							<Modal />
 							<Layout>
 								<AnimatePresence initial={false} exitBeforeEnter>
-									<Component {...pageProps} />
+									<Component {...pageProps} key={router.route} />
 								</AnimatePresence>
 								<ToastContainer {...toastOptions} />
 							</Layout>

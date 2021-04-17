@@ -17,7 +17,7 @@ function FormInput({
 	return (
 		<div className='py-2'>
 			<input
-				ref={register({ required: isRequired, ...validation })}
+				{...register('Name')}
 				id={name}
 				name={name}
 				type={type}
