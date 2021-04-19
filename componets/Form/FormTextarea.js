@@ -16,7 +16,7 @@ function FormTextarea({
 	return (
 		<div className='py-2'>
 			<textarea
-				{...register('Name')}
+				{...register('name', { required: isRequired, ...validation })}
 				id={name}
 				name={name}
 				className='appearance-none bg-transparent placeholder-faded-black border border-faded-black focus:border-black focus:outline-none rounded-md w-full text-base px-1.5 py-1'

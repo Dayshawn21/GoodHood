@@ -7,7 +7,7 @@ function CartSummary() {
 
 	return (
 		<button className='appearance-none focus:outline-none' onClick={openModal}>
-			Shopping Bag ({total_unique_items})
+			<i class='fas fa-shopping-cart'></i> ({total_unique_items})
 		</button>
 	);
 }

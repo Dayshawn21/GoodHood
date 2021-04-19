@@ -45,7 +45,9 @@ const Navbars = () => {
 						</Nav.Item>
 
 						<Nav.Item as='li'>
-							<CartSummary />
+							<Nav.Link>
+								<CartSummary />
+							</Nav.Link>
 						</Nav.Item>
 					</Nav>
 				</Navbar.Collapse>
