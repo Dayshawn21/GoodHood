@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { commerce } from '../lib/commerce';
+import Mic from '../componets/Mic';
 import Espisodes from '../componets/Episodes';
 import Merch from '../componets/Merch';
 
@@ -21,9 +22,8 @@ const Home = ({ podcasts, products, merchant, categories }) => {
 			</Head>
 			<Header></Header>
 			<Espisodes podcasts={podcasts}></Espisodes>
-
-			<CategoryList categories={categories} />
 			<ProductList products={products} />
+			<Mic />
 		</div>
 	);
 };

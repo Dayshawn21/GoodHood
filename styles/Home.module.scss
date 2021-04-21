@@ -20,7 +20,7 @@
 	grid-gap: 2rem;
 }
 
-.grid-4 {
+.grid4 {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-gap: 2rem;
@@ -83,8 +83,29 @@
 	}
 }
 
+.mic {
+	padding-top: 4rem;
+	color: white;
+	h2 {
+		text-align: center;
+		font-size: 4rem;
+		text-decoration: underline;
+	}
+	h3 {
+		font-size: 2.5rem;
+	}
+	p {
+		font-size: 1.5rem;
+	}
+	a {
+		font-size: 2rem;
+		color: blue;
+	}
+}
+
 @media only screen and (max-width: 600px) {
-	.grid3 {
+	.grid3,
+	.grid4 {
 		display: grid;
 		grid-template-columns: repeat(1, 1fr);
 		grid-gap: 2rem;
