@@ -1,11 +1,11 @@
-import { commerce } from '../../lib/commerce';
+import { commerce } from '../lib/commerce';
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { toast } from 'react-toastify';
-import VariantPicker from '../../componets/VariantSelector';
-import { useCartDispatch } from '../../context/cart';
+import VariantPicker from '../componets/VariantSelector';
+import { useCartDispatch } from '../context/cart';
 
-import { useModalDispatch } from '../../context/model';
+import { useModalDispatch } from '../context/model';
 
 import {
 	Row,

@@ -4,13 +4,15 @@ import { commerce } from '../lib/commerce';
 import merchStyle from '../styles/Merch.module.scss';
 import ProductList from '../componets/ProductList';
 
-const Merchs = ({ products, merchant, categories }) => {
+const Merchs = ({ products }) => {
 	return (
 		<section className='container'>
 			<div className={merchStyle.merch}>
 				<h1 className='text-center py-4'>Merch </h1>
-
-				<ProductList products={products} />
+				<div className={merchStyle.grid}>
+					{products &&
+						products.map((product) => <MerchCard product={product} />)}
+				</div>
 			</div>
 		</section>
 	);
@@ -18,16 +20,12 @@ const Merchs = ({ products, merchant, categories }) => {
 export const getStaticProps = async () => {
 	// Fetch Products
 
-	const merchant = await commerce.merchants.about();
-	const { data: categories } = await commerce.categories.list();
-	const { data: products } = await commerce.products.list();
-
+	const products_res = await fetch(`${API_URL}/products/`);
+	const products = await products_res.json();
 	// return Products
 
 	return {
 		props: {
-			merchant,
-			categories,
 			products,
 		},
 	};

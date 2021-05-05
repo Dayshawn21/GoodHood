@@ -4,8 +4,8 @@ export const API_URL =
 export const NEXT_PUBLIC_CHEC_PUBLIC_API_KEY =
 	'pk_2558968579fde7e9fa394a45c397a0e63196c8608c891';
 
-export const NEXT_PUBLIC_STRIPE_PK =
-	'pk_test_51IJWdUGE6egoMBXNfwMWFU2Yd2FbQp9edtqixhW6f1nYqAOTZ5v6MVgB9PYycIxDZbicni6k7os0MpdcvuxT1w1N00qg6tI9c1';
+export const NEXT_PUBLIC_SNIPCART_PK =
+	'NTgxNzg0MzMtY2QxOC00ZDY3LWI0Y2MtNzhhNGQ1OWUwZThjNjM3NTQ3NDEyMjA2NTA1MDcw';
 
 /**
  * Give an image return URL

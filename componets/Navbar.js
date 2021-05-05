@@ -45,8 +45,9 @@ const Navbars = () => {
 						</Nav.Item>
 
 						<Nav.Item as='li'>
-							<Nav.Link>
-								<CartSummary />
+							<Nav.Link className='snipcart-checkout snipcart-summary'>
+								<i class='fas fa-shopping-cart'></i>
+								<span className='snipcart-total-price'>$0.00</span>
 							</Nav.Link>
 						</Nav.Item>
 					</Nav>

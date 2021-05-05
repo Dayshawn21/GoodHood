@@ -10,7 +10,9 @@ const Merch = ({ products }) => {
 
 				<div className={styles.grid3}>
 					{products &&
-						products.map((product) => <MerchCard product={product} />)}
+						products.map((product, index) => (
+							<MerchCard key={index} product={product} />
+						))}
 				</div>
 				<div className='py-3 text-center'>
 					<Link href='/Merch'>
