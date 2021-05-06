@@ -1,8 +1,7 @@
-import { useContext } from 'react';
 import Link from 'next/link';
 
 import styles from '../styles/Home.module.scss';
-import { fromImagetoUrl } from '../utils/urls';
+
 import EspCard from './EspCard';
 
 const Episodes = ({ podcasts }) => {
