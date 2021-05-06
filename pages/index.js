@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { commerce } from '../lib/commerce';
+
 import Mic from '../componets/Mic';
 import Espisodes from '../componets/Episodes';
 import Merch from '../componets/Merch';
@@ -7,10 +7,6 @@ import Merch from '../componets/Merch';
 import { NEXT_PUBLIC_SNIPCART_PK, API_URL } from '../utils/urls';
 import Header from '../componets/Header';
 import { Router, useRouter } from 'next/router';
-import ProductList from '../componets/ProductList';
-import CategoryList from '../componets/CategoryList';
-import { parseCookies } from 'nookies';
-import Link from 'next/link';
 
 const Home = ({ podcasts, products }) => {
 	const Router = useRouter();
@@ -55,16 +51,12 @@ export const getStaticProps = async () => {
 	const podcast_res = await fetch(`${API_URL}/podcasts?_limit=3`);
 	const podcasts = await podcast_res.json();
 
-	const orders_res = await fetch(`${API_URL}/orders`);
-	const orders = await orders_res.json();
-
 	// return Products
 
 	return {
 		props: {
 			products,
 			podcasts,
-			orders,
 		},
 	};
 };

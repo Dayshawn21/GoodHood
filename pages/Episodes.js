@@ -1,4 +1,3 @@
-import Espisodes from '../componets/Episodes';
 import { API_URL } from '../utils/urls';
 import EspCard from '../componets/EspCard';
 import podcastStyle from '../styles/Podcast.module.scss';
