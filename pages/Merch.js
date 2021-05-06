@@ -1,7 +1,7 @@
 import MerchCard from '../componets/MerchCard';
 import { API_URL } from '../utils/urls';
 
-import merchStyle from '../styles/merch.module.scss';
+import merchStyle from '../styles/Merch.module.scss';
 
 const Merchs = ({ products }) => {
 	return (
