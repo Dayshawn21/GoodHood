@@ -1,7 +1,3 @@
-import Link from 'next/link';
-import { useContext } from 'react';
-import navStyles from '../styles/Nav.module.scss';
-import CartSummary from './CartSummary';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { Navbar, Nav } from 'react-bootstrap';
