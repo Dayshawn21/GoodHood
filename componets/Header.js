@@ -8,9 +8,9 @@ const Header = () => {
 					<Image
 						src='/PURPLE_360x.jpg'
 						alt='Picture of the author'
-						width={450}
-						height={450}
-						layout='intrinsic'
+						width={250}
+						height={250}
+						layout='responsive'
 					/>
 					<div className={homeStyles.socail}>
 						<h2>LISTEN & SUBSCRIBE ON:</h2>

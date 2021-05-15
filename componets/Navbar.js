@@ -21,7 +21,7 @@ const Navbars = () => {
 						alt='Picture of the author'
 						width={80}
 						height={80}
-						layout='intrinsic'
+						layout='responsive'
 					/>
 				</Navbar.Brand>
 
