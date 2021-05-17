@@ -1,17 +1,11 @@
 import homeStyles from '../styles/Hero.module.scss';
-import Image from 'next/image';
+import { Image } from 'react-bootstrap';
 const Header = () => {
 	return (
 		<div className={homeStyles.hero}>
 			<div className='container'>
 				<div className={homeStyles.heroText}>
-					<Image
-						src='/PURPLE_360x.jpg'
-						alt='Picture of the author'
-						width={250}
-						height={250}
-						layout='responsive'
-					/>
+					<Image className='mx-auto' src='/PURPLE_360x.jpg' fluid />
 					<div className={homeStyles.socail}>
 						<h2>LISTEN & SUBSCRIBE ON:</h2>
 						<a

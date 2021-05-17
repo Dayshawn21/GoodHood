@@ -1,14 +1,19 @@
 import { fromImagetoUrl } from '../utils/urls';
 import Link from 'next/link';
+import { Image } from 'react-bootstrap';
 
 const MerchCard = ({ product }) => {
 	return (
 		<div className='py-3'>
 			<Link href={`/products/${product.slug}`}>
 				<a>
-					<img src={fromImagetoUrl(product.image)} alt='...' />
+					<Image
+						src={fromImagetoUrl(product.image)}
+						// className='card-img-top'
+						fluid
+					/>
 					<div className='card-body text-center'>
-						<h3 className='card-title'>{product.name}</h3>
+						<h3 className='card-title'>{product.title}</h3>
 						<p>${product.price}</p>
 
 						<a href='#' className='btn btn-primary btn-lg'>

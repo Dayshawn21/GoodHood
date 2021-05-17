@@ -11,6 +11,10 @@ import {
 } from 'react-bootstrap';
 
 const Product = ({ product }) => {
+	const [productQuantity, setProductQuantity] = useState(0);
+	const [selectedImage, setSelectedImage] = useState(0);
+	const [selectedVariant, setSelectedVariant] = useState('');
+
 	return (
 		<div key={product.id} className='py-3'>
 			<Row>
