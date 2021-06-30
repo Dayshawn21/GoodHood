@@ -1,5 +1,5 @@
-import { fromImagetoUrl, API_URL } from "../../utils/urls";
-import styles from "../../styles/Home.module.scss";
+import { API_URL } from "../../utils/urls";
+
 import Image from "next/image";
 
 const Podcast = ({ podcast }) => {

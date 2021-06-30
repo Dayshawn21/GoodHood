@@ -1,11 +1,10 @@
 import Head from "next/head";
-import { useEffect, useState } from "react";
+
 import client from "../shopify/shopify";
 import Mic from "../componets/Mic";
 import Espisodes from "../componets/Episodes";
 import Merch from "../componets/Merch";
 import Contact from "../componets/Contactform";
-import Link from "next/link";
 
 import { API_URL } from "../utils/urls";
 import Header from "../componets/Header";

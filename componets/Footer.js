@@ -4,20 +4,20 @@ const Footer = () => {
       <div className="pt-3">
         <h1 className="font-medium text-xl">Follow the Pod on Social Media:</h1>
       </div>
-      <div class="pb-3 pt-3 uppercase text-center tracking-wide flex justify-center">
-        <div class="posts">
+      <div className="pb-3 pt-3 uppercase text-center tracking-wide flex justify-center">
+        <div className="posts">
           <i
-            class="fab fa-twitter text-white"
+            className="fab fa-twitter text-white"
             style={{ fontSize: "2.5rem" }}
           ></i>
         </div>
-        <div class="followers">
+        <div className="followers">
           <i
-            class="fab fa-facebook-f text-white mx-4"
+            className="fab fa-facebook-f text-white mx-4"
             style={{ fontSize: "2.5rem" }}
           ></i>
         </div>
-        <div class="following">
+        <div className="following">
           <i
             class="fab fa-instagram text-white"
             style={{ fontSize: "2.5rem" }}

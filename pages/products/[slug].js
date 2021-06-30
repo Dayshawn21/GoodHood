@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { fromImagetoUrl, API_URL } from "../../utils/urls";
+
 import client from "../../shopify/shopify";
 import Image from "next/image";
-import { useRouter } from "next/router";
-import styles from "../../styles/Home.module.scss";
-import { Dropdown, DropdownButton } from "react-bootstrap";
 
 const Product = ({ product, checkout }) => {
   const [amount, setAmount] = useState(1);
@@ -12,8 +9,6 @@ const Product = ({ product, checkout }) => {
   const [selectedVariant, setSelectedVariant] = useState("");
   const [selectedImage, setSelectedImage] = useState(0);
   const variant = product.variants[0];
-
-  console.log(product);
 
   const addItemsToAdd = () => {
     const checkoutId = checkout.id;
@@ -112,8 +107,6 @@ export const getServerSideProps = async (context) => {
 
   return {
     props: {
-      // products,
-      // podcasts,
       product: JSON.parse(JSON.stringify(product)),
       checkout: JSON.parse(JSON.stringify(checkout)),
     },

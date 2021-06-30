@@ -1,4 +1,4 @@
-import { Image } from "react-bootstrap";
+import { Image } from "next/image";
 const Header = () => {
   return (
     <div className="py-3 bg-black  text-white ">

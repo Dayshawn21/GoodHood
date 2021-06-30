@@ -1,6 +1,4 @@
-import { fromImagetoUrl } from "../utils/urls";
 import Link from "next/link";
-import { Image } from "react-bootstrap";
 
 const MerchCard = ({ product }) => {
   console.log(product);
