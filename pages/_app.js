@@ -1,13 +1,13 @@
-import Layout from '../componets/Layout';
+import Layout from "../componets/Layout";
 
-import '../styles/globals.scss';
+import "../styles/globals.scss";
 
-function MyApp({ Component, pageProps, router }) {
-	return (
-		<Layout>
-			<Component {...pageProps} key={router.route} />
-		</Layout>
-	);
+function MyApp({ Component, pageProps }) {
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  );
 }
 
 export default MyApp;

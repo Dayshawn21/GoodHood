@@ -1,159 +1,148 @@
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import styles from '../styles/Home.module.scss';
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import styles from "../styles/Home.module.scss";
 
 const Mic = () => {
-	return (
-		<div className='container py-3'>
-			<div className={styles.mic}>
-				<h2 className='text-center'>Behind the Mic</h2>
+  return (
+    <div className="container py-3">
+      <div>
+        <h2 className="text-center text-5xl">Behind the Mic</h2>
 
-				<div className={styles.grid4}>
-					<div className='max-w-sm rounded overflow-hidden shadow-lg px-4 py-2 m-2'>
-						<Image
-							src='/img/justyn.jpg'
-							alt='Picture of the author'
-							width={400}
-							height={350}
-							layout='intrinsic'
-						/>
-						<div className='px-6 py-4'>
-							<div className='font-bold text-4xl mb-2'>Juice: Host</div>
-						</div>
-						<div className='px-6 pt-4 pb-2'>
-							<Link href='https://www.facebook.com/justynpolk'>
-								<a>
-									<span className='inline-block bg-gray-200 rounded-full px-3 py-1 font-semibold .text-white mr-4 mb-2'>
-										<i class='fab fa-facebook-square'></i>
-									</span>
-								</a>
-							</Link>
-							<Link href='https://www.facebook.com/justynpolk'>
-								<a>
-									<span className='inline-block bg-gray-200 rounded-full px-3 py-1  font-semibold .text-white mr-4 mb-2'>
-										<i class='fab fa-instagram'></i>
-									</span>
-								</a>
-							</Link>
-							<Link href='https://www.facebook.com/justynpolk'>
-								<a>
-									<span className='inline-block bg-gray-200 rounded-full px-3 py-1  font-semibold .text-white mr-4 mb-2'>
-										<i class='fab fa-twitter'></i>
-									</span>
-								</a>
-							</Link>
-						</div>
-					</div>
-					<div className='max-w-sm rounded overflow-hidden shadow-lg px-4 py-2 m-2'>
-						<Image
-							src='/img/justyn.jpg'
-							alt='Picture of the author'
-							width={400}
-							height={350}
-							layout='intrinsic'
-						/>
-						<div className='px-6 py-4'>
-							<div className='font-bold text-4xl mb-2'>Juice: Host</div>
-						</div>
-						<div className='px-6 pt-4 pb-2'>
-							<Link href='https://www.facebook.com/justynpolk'>
-								<a>
-									<span className='inline-block bg-gray-200 rounded-full px-3 py-1  font-semibold .text-white mr-4 mb-2'>
-										<i class='fab fa-facebook-square'></i>
-									</span>
-								</a>
-							</Link>
-							<Link href='https://www.facebook.com/justynpolk'>
-								<a>
-									<span className='inline-block bg-gray-200 rounded-full px-3 py-1  font-semibold .text-white mr-4 mb-2'>
-										<i class='fab fa-instagram'></i>
-									</span>
-								</a>
-							</Link>
-							<Link href='https://www.facebook.com/justynpolk'>
-								<a>
-									<span className='inline-block bg-gray-200 rounded-full px-3 py-1  font-semibold .text-white mr-4 mb-2'>
-										<i class='fab fa-twitter'></i>
-									</span>
-								</a>
-							</Link>
-						</div>
-					</div>
-					<div className='max-w-sm rounded overflow-hidden shadow-lg px-4 py-2 m-2'>
-						<Image
-							src='/img/justyn.jpg'
-							alt='Picture of the author'
-							width={400}
-							height={350}
-							layout='intrinsic'
-						/>
-						<div className='px-6 py-4'>
-							<div className='font-bold text-4xl mb-2'>Juice: Host</div>
-						</div>
-						<div className='px-6 pt-4 pb-2'>
-							<Link href='https://www.facebook.com/justynpolk'>
-								<a>
-									<span className='inline-block bg-gray-200 rounded-full px-3 py-1  font-semibold .text-white mr-4 mb-2'>
-										<i class='fab fa-facebook-square'></i>
-									</span>
-								</a>
-							</Link>
-							<Link href='https://www.facebook.com/justynpolk'>
-								<a>
-									<span className='inline-block bg-gray-200 rounded-full px-3 py-1  font-semibold .text-white mr-4 mb-2'>
-										<i className='fab fa-instagram'></i>
-									</span>
-								</a>
-							</Link>
-							<Link href='https://www.facebook.com/justynpolk'>
-								<a>
-									<span className='inline-block bg-gray-200 rounded-full px-3 py-1  font-semibold .text-white mr-4 mb-2'>
-										<i className='fab fa-twitter'></i>
-									</span>
-								</a>
-							</Link>
-						</div>
-					</div>
-					<div className='max-w-sm rounded overflow-hidden shadow-lg px-4 py-2 m-2'>
-						<Image
-							src='/img/justyn.jpg'
-							alt='Picture of the author'
-							width={400}
-							height={350}
-							layout='intrinsic'
-						/>
-						<div className='px-6 py-4'>
-							<div className='font-bold text-4xl mb-2'>Juice: Host</div>
-						</div>
-						<div className='px-6 pt-4 pb-2'>
-							<Link href='https://www.facebook.com/justynpolk'>
-								<a>
-									<span className='inline-block bg-gray-200 rounded-full px-3 py-1  font-semibold .text-white mr-4 mb-2'>
-										<i class='fab fa-facebook-square'></i>
-									</span>
-								</a>
-							</Link>
-							<Link href='https://www.facebook.com/justynpolk'>
-								<a>
-									<span className='inline-block bg-gray-200 rounded-full px-3 py-1  font-semibold .text-white mr-4 mb-2'>
-										<i class='fab fa-instagram'></i>
-									</span>
-								</a>
-							</Link>
-							<Link href='https://www.facebook.com/justynpolk'>
-								<a>
-									<span className='inline-block bg-gray-200 rounded-full px-3 py-1  font-semibold .text-white mr-4 mb-2'>
-										<i class='fab fa-twitter'></i>
-									</span>
-								</a>
-							</Link>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	);
+        <div className="grid md:grid-cols-4 gap-4 py-3">
+          <div class="container mx-auto max-w-sm rounded-lg overflow-hidden shadow-lg my-2 bg-white">
+            <div>
+              <img
+                class="w-full h-72  "
+                src="/img/justyn.jpg"
+                alt="Profile image"
+              />
+            </div>
+
+            <div class="pt-6 pb-8 text-gray-600 text-center">
+              <p className="text-3xl">Juice </p>
+              <p class="text-2xl">Host</p>
+            </div>
+
+            <div class="pb-10 uppercase text-center tracking-wide flex justify-center">
+              <div class="posts">
+                <i
+                  class="fab fa-twitter text-blue-700"
+                  style={{ fontSize: "2.5rem" }}
+                ></i>
+              </div>
+              <div class="followers">
+                <i
+                  class="fab fa-facebook-f text-blue-700 mx-4"
+                  style={{ fontSize: "2.5rem" }}
+                ></i>
+              </div>
+              <div class="following">
+                <i
+                  class="fab fa-instagram text-blue-700"
+                  style={{ fontSize: "2.5rem" }}
+                ></i>
+              </div>
+            </div>
+          </div>
+          <div class="container mx-auto max-w-sm rounded-lg overflow-hidden shadow-lg my-2 bg-white">
+            <div>
+              <img
+                class="w-full h-72 "
+                src="/img/justyn.jpg"
+                alt="Profile image"
+              />
+            </div>
+
+            <div class="pt-6 pb-8 text-gray-600 text-center">
+              <p className="text-3xl">J Black </p>
+              <p class="text-2xl"> Co Host</p>
+            </div>
+
+            <div class="pb-10 uppercase text-center tracking-wide flex justify-center">
+              <div class="posts">
+                <i
+                  class="fab fa-twitter text-blue-700"
+                  style={{ fontSize: "2.5rem" }}
+                ></i>
+              </div>
+
+              <div class="following">
+                <i
+                  class="fab fa-instagram text-blue-700 ml-4"
+                  style={{ fontSize: "2.5rem" }}
+                ></i>
+              </div>
+            </div>
+          </div>
+          <div class="container mx-auto max-w-sm rounded-lg overflow-hidden shadow-lg my-2 bg-white">
+            <div>
+              <img
+                class="w-full h-72"
+                src="/img/jimmy.jpg"
+                alt="Profile image"
+              />
+            </div>
+
+            <div class="pt-6 pb-8 text-gray-600 text-center">
+              <p className="text-3xl">Jimmy </p>
+              <p class="text-2xl"> Co Host</p>
+            </div>
+
+            <div class="pb-10 uppercase text-center tracking-wide flex justify-center">
+              <div class="posts">
+                <i
+                  class="fab fa-twitter text-blue-700"
+                  style={{ fontSize: "2.5rem" }}
+                ></i>
+              </div>
+              <div class="followers">
+                <i
+                  class="fab fa-facebook-f text-blue-700 mx-4"
+                  style={{ fontSize: "2.5rem" }}
+                ></i>
+              </div>
+              <div class="following">
+                <i
+                  class="fab fa-instagram text-blue-700"
+                  style={{ fontSize: "2.5rem" }}
+                ></i>
+              </div>
+            </div>
+          </div>
+          <div class="container mx-auto max-w-sm rounded-lg overflow-hidden shadow-lg my-2 bg-white">
+            <div>
+              <img
+                class="w-full h-72"
+                src="/img/justyn.jpg"
+                alt="Profile image"
+              />
+            </div>
+
+            <div class="pt-6 pb-8 text-gray-600 text-center">
+              <p className="text-3xl">KC </p>
+              <p class="text-2xl"> Co Host</p>
+            </div>
+
+            <div class="pb-10 uppercase text-center tracking-wide flex justify-center">
+              <div class="followers">
+                <i
+                  class="fab fa-facebook-f text-blue-700 mr-4"
+                  style={{ fontSize: "2.5rem" }}
+                ></i>
+              </div>
+              <div class="following">
+                <i
+                  class="fab fa-instagram text-blue-700"
+                  style={{ fontSize: "2.5rem" }}
+                ></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Mic;

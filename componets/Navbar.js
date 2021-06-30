@@ -1,56 +1,60 @@
-import { useRouter } from 'next/router';
-import Image from 'next/image';
-import { Navbar, Nav } from 'react-bootstrap';
+import { useRouter } from "next/router";
+import Image from "next/image";
+import Link from "next/link";
+import { Navbar, Nav } from "react-bootstrap";
 
 const Navbars = () => {
-	const router = useRouter();
+  return (
+    <div>
+      <nav className="nav flex flex-wrap items-center justify-between px-4 bg-gray-600 text-white ">
+        <div className="flex flex-no-shrink items-center py-1  text-grey-darkest">
+          <Link href={`/`}>
+            <a>
+              <Image
+                src="/PURPLE_360x.jpg"
+                alt="Picture of the author"
+                width={60}
+                height={60}
+              />
+            </a>
+          </Link>
+        </div>
+        <input className="menu-btn hidden" type="checkbox" id="menu-btn" />
+        <label
+          className="menu-icon block cursor-pointer md:hidden px-2 py-3 relative select-none"
+          for="menu-btn"
+        >
+          <span className="navicon bg-grey-darkest flex items-center relative"></span>
+        </label>
 
-	const isHome = router.pathname === '/';
+        <ul className="menu border-b md:border-none flex justify-end list-reset m-0 w-full md:w-auto">
+          <li className="border-t md:border-none">
+            <Link href={`/podcast`}>
+              <a className="block md:inline-block px-2 py-3 no-underline text-grey-darkest hover:text-grey-darker ">
+                Podcast
+              </a>
+            </Link>
+          </li>
 
-	const goBack = (e) => {
-		e.preventDefault();
-		router.back();
-	};
+          <li className="border-t md:border-none">
+            <Link href={`/Merch`}>
+              <a className="block md:inline-block px-2 py-3 no-underline text-grey-darkest hover:text-grey-darker ">
+                Merch
+              </a>
+            </Link>
+          </li>
 
-	return (
-		<div>
-			<Navbar bg='light' expand='lg' className='justify-content-center'>
-				<Navbar.Brand href='/'>
-					<Image
-						src='/PURPLE_360x.jpg'
-						alt='Picture of the author'
-						width={80}
-						height={80}
-						layout='intrinsic'
-					/>
-				</Navbar.Brand>
-
-				<Navbar.Toggle aria-controls='responsive-navbar-nav' />
-				<Navbar.Collapse id='responsive-navbar-nav'>
-					<Nav as='ul'>
-						<Nav.Item as='li'>
-							<Nav.Link href='/Merch'>Merch</Nav.Link>
-						</Nav.Item>
-
-						<Nav.Item as='li'>
-							<Nav.Link href='/Episodes'>Episodes</Nav.Link>
-						</Nav.Item>
-
-						<Nav.Item as='li'>
-							<Nav.Link href='/Contact'>Contact</Nav.Link>
-						</Nav.Item>
-
-						<Nav.Item as='li'>
-							<Nav.Link className='snipcart-checkout snipcart-summary'>
-								<i class='fas fa-shopping-cart'></i>
-								<span className='snipcart-total-price'>$0.00</span>
-							</Nav.Link>
-						</Nav.Item>
-					</Nav>
-				</Navbar.Collapse>
-			</Navbar>
-		</div>
-	);
+          <li className="border-t md:border-none">
+            <Link href={`/Cart`}>
+              <a className="block md:inline-block px-2 py-3 no-underline text-grey-darkest hover:text-grey-darker ">
+                <i class="fas fa-shopping-cart"></i>
+              </a>
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  );
 };
 
 export default Navbars;

@@ -1,43 +1,42 @@
-import Head from 'next/head';
-import { client } from '../utils/shopify';
-import Mic from '../componets/Mic';
-import Espisodes from '../componets/Episodes';
-import Merch from '../componets/Merch';
+import Head from "next/head";
+import { useEffect, useState } from "react";
+import client from "../shopify/shopify";
+import Mic from "../componets/Mic";
+import Espisodes from "../componets/Episodes";
+import Merch from "../componets/Merch";
+import Contact from "../componets/Contactform";
+import Link from "next/link";
 
-import { API_URL } from '../utils/urls';
-import Header from '../componets/Header';
-import { Router, useRouter } from 'next/router';
+import { API_URL } from "../utils/urls";
+import Header from "../componets/Header";
 
 const Home = ({ podcasts, products }) => {
-	const Router = useRouter();
+  console.log(products);
+  return (
+    <div>
+      <Header></Header>
+      <Espisodes podcasts={podcasts}></Espisodes>
+      <Merch products={products} />
 
-	return (
-		<div>
-			<Header></Header>
-			<Espisodes podcasts={podcasts}></Espisodes>
-			<Merch products={products} />
-			<h1>hello</h1>
-			<Mic />
-		</div>
-	);
+      <Mic />
+      <Contact />
+    </div>
+  );
 };
 
 export const getStaticProps = async () => {
-	// Fetch Products
-	const product_res = await fetch(`${API_URL}/products?_limit=3`);
-	const products = await product_res.json();
+  const podcast_res = await fetch(`${API_URL}/podcasts?_limit=3`);
+  const podcasts = await podcast_res.json();
 
-	const podcast_res = await fetch(`${API_URL}/podcasts?_limit=3`);
-	const podcasts = await podcast_res.json();
+  // return Products
+  const products = await client.product.fetchAll();
 
-	// return Products
-
-	return {
-		props: {
-			products,
-			podcasts,
-		},
-	};
+  return {
+    props: {
+      podcasts,
+      products: JSON.parse(JSON.stringify(products)),
+    },
+  };
 };
 
 export default Home;
