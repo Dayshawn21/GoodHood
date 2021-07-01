@@ -61,31 +61,42 @@ const Podcast = ({ podcast }) => {
     </div>
   );
 };
-export async function getStaticProps({ params: { slug } }) {
-  const podcast_res = await fetch(`${API_URL}/podcasts/?slug=${slug}`);
-  const found = await podcast_res.json();
+// export async function getStaticProps({ params: { slug } }) {
+//   const podcast_res = await fetch(`${API_URL}/podcasts/?slug=${slug}`);
+//   const found = await podcast_res.json();
+
+//   return {
+//     props: {
+//       podcast: found[0],
+//     },
+//   };
+// }
+
+// export async function getStaticPaths() {
+//   //Retrieve all the possible paths
+
+//   const podcasts_res = await fetch(`${API_URL}/podcasts/`);
+//   const podcasts = await podcasts_res.json();
+
+//   //Return them to NextJS context
+
+//   return {
+//     paths: podcasts.map((podcast) => ({
+//       params: { slug: String(podcast.slug) },
+//     })),
+
+//     fallback: false,
+//   };
+
+// }
+export const getServerSideProps = async ({ query: { slug } }) => {
+  const podcast_res = await fetch(`${API_URL}/podcasts?slug=${slug}`);
+  const podcasts = await podcast_res.json();
 
   return {
     props: {
-      podcast: found[0],
+      podcast: podcasts[0],
     },
   };
-}
-
-export async function getStaticPaths() {
-  //Retrieve all the possible paths
-
-  const podcasts_res = await fetch(`${API_URL}/podcasts/`);
-  const podcasts = await podcasts_res.json();
-
-  //Return them to NextJS context
-
-  return {
-    paths: podcasts.map((podcast) => ({
-      params: { slug: String(podcast.slug) },
-    })),
-
-    fallback: false,
-  };
-}
+};
 export default Podcast;
