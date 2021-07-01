@@ -27,20 +27,18 @@ const Navbars = () => {
 
         <ul className="menu border-b md:border-none flex justify-end list-reset m-0 w-full md:w-auto">
           <li className="border-t md:border-none">
-            <Link
-              className="block md:inline-block px-2 py-3 no-underline text-grey-darkest hover:text-grey-darker "
-              href="/episodes"
-            >
-              <a>Podcast</a>
+            <Link href="/episodes">
+              <a className="block md:inline-block px-2 py-3 no-underline text-grey-darkest hover:text-grey-darker ">
+                Podcast
+              </a>
             </Link>
           </li>
 
           <li className="border-t md:border-none">
-            <Link
-              className="block md:inline-block px-2 py-3 no-underline text-grey-darkest hover:text-grey-darker "
-              href="/merch"
-            >
-              <a>Merch</a>
+            <Link href="/merch">
+              <a className="block md:inline-block px-2 py-3 no-underline text-grey-darkest hover:text-grey-darker ">
+                Merch
+              </a>
             </Link>
           </li>
 
