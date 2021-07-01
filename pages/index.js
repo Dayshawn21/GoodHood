@@ -1,16 +1,15 @@
 import Head from "next/head";
 
 import client from "../shopify/shopify";
-import Mic from "../componets/Mic";
-import Espisodes from "../componets/Episodes";
-import Merch from "../componets/Merch";
-import Contact from "../componets/Contactform";
+import Mic from "../components/Mic";
+import Espisodes from "../components/Episodes";
+import Merch from "../components/Merch";
+import Contact from "../components/Contactform";
 
 import { API_URL } from "../utils/urls";
-import Header from "../componets/Header";
+import Header from "../components/Header";
 
 const Home = ({ podcasts, products }) => {
-  console.log(products);
   return (
     <div>
       <Header></Header>
