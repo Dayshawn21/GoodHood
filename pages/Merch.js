@@ -1,4 +1,4 @@
-import MerchCard from "../componets/MerchCard";
+import MerchCard from "../components/MerchCard";
 import client from "../shopify/shopify";
 
 import merchStyle from "../styles/Merch.module.scss";
