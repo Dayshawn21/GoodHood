@@ -26,7 +26,7 @@ const Podcast = ({ podcast }) => {
 
           <p className="text-lg ">{podcast.description} </p>
 
-          <div className="flex pt-3 text-center ">
+          <div className="flex pt-6 text-center ">
             <div>
               <a
                 href="https://podcasts.apple.com/us/podcast/good-in-the-hood-podcast/id1454831531"
