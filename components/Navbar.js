@@ -31,7 +31,7 @@ const Navbars = () => {
               className="block md:inline-block px-2 py-3 no-underline text-grey-darkest hover:text-grey-darker "
               href="/episodes"
             >
-              Podcast
+              <a>Podcast</a>
             </Link>
           </li>
 
@@ -40,12 +40,12 @@ const Navbars = () => {
               className="block md:inline-block px-2 py-3 no-underline text-grey-darkest hover:text-grey-darker "
               href="/merch"
             >
-              Merch
+              <a>Merch</a>
             </Link>
           </li>
 
           {/* <li className="border-t md:border-none">
-            <Link href="/cart">
+            <Link href={`/Cart`}>
               <a className="block md:inline-block px-2 py-3 no-underline text-grey-darkest hover:text-grey-darker ">
                 <i class="fas fa-shopping-cart"></i>
               </a>
