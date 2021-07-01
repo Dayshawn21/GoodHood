@@ -7,9 +7,7 @@ const Episodes = ({ podcasts }) => {
       <div className={podcastStyle.podcast}>
         <h1 className="text-center py-4"> Episodes </h1>
         <div className={podcastStyle.grid}>
-          {podcasts.map((podcast) => (
-            <EspCard podcast={podcast} />
-          ))}
+          {podcasts && podcasts.map((podcast) => <EspCard podcast={podcast} />)}
         </div>
       </div>
     </div>
