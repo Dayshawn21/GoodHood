@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 const MerchCard = ({ product }) => {
-  console.log(product);
   return (
     <div className="py-3">
       <Link href={`/products/${product.handle}`}>

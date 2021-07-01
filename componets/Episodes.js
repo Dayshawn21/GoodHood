@@ -14,7 +14,7 @@ const Episodes = ({ podcasts }) => {
         <div className="py-3 text-center">
           <Link href="/Episodes">
             <a className="bg-blue-500 text-xl rounded-full font-bold text-white px-4 py-4 transition duration-300 ease-in-out hover:bg-blue-600 ">
-              More Episodes{" "}
+              More Episodes
             </a>
           </Link>
         </div>

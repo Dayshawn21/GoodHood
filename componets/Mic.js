@@ -1,7 +1,4 @@
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import styles from "../styles/Home.module.scss";
 
 const Mic = () => {
   return (
@@ -55,7 +52,7 @@ const Mic = () => {
             </div>
 
             <div class="pt-6 pb-8 text-gray-600 text-center">
-              <p className="text-3xl">J Black </p>
+              <p className="text-3xl">Jay Black </p>
               <p class="text-2xl"> Co Host</p>
             </div>
 
@@ -112,11 +109,7 @@ const Mic = () => {
           </div>
           <div class="container mx-auto max-w-sm rounded-lg overflow-hidden shadow-lg my-2 bg-white">
             <div>
-              <img
-                class="w-full h-72"
-                src="/img/justyn.jpg"
-                alt="Profile image"
-              />
+              <img class="w-full h-72" src="/img/kc.jpg" alt="Profile image" />
             </div>
 
             <div class="pt-6 pb-8 text-gray-600 text-center">

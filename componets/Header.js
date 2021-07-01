@@ -1,11 +1,11 @@
-import { Image } from "next/image";
+import Image from "next/image";
 const Header = () => {
   return (
     <div className="py-3 bg-black  text-white ">
       <div className="container">
-        <div>
+        <div className="text-center">
           <Image
-            className="mx-auto"
+            className="mx-auto "
             src="/PURPLE_360x.jpg"
             width={300}
             height={300}

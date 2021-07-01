@@ -3,7 +3,6 @@ import { API_URL } from "../../utils/urls";
 import Image from "next/image";
 
 const Podcast = ({ podcast }) => {
-  console.log(podcast);
   return (
     <div className="container py-4">
       <div className="grid md:grid-cols-2 ">
