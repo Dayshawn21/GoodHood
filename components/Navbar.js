@@ -27,23 +27,25 @@ const Navbars = () => {
 
         <ul className="menu border-b md:border-none flex justify-end list-reset m-0 w-full md:w-auto">
           <li className="border-t md:border-none">
-            <Link href={`/episodes`}>
-              <a className="block md:inline-block px-2 py-3 no-underline text-grey-darkest hover:text-grey-darker ">
-                Podcast
-              </a>
+            <Link
+              className="block md:inline-block px-2 py-3 no-underline text-grey-darkest hover:text-grey-darker "
+              href="/episodes"
+            >
+              Podcast
             </Link>
           </li>
 
           <li className="border-t md:border-none">
-            <Link href={`/merch`}>
-              <a className="block md:inline-block px-2 py-3 no-underline text-grey-darkest hover:text-grey-darker ">
-                Merch
-              </a>
+            <Link
+              className="block md:inline-block px-2 py-3 no-underline text-grey-darkest hover:text-grey-darker "
+              href="/merch"
+            >
+              Merch
             </Link>
           </li>
 
           {/* <li className="border-t md:border-none">
-            <Link href={`/Cart`}>
+            <Link href="/cart">
               <a className="block md:inline-block px-2 py-3 no-underline text-grey-darkest hover:text-grey-darker ">
                 <i class="fas fa-shopping-cart"></i>
               </a>
