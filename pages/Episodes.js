@@ -3,9 +3,9 @@ import EspCard from "../components/EspCard";
 import podcastStyle from "../styles/Podcast.module.scss";
 const Episodes = ({ podcasts }) => {
   return (
-    <div className="container">
-      <div className={podcastStyle.podcast}>
-        <h1 className="text-center py-4"> Episodes </h1>
+    <div className="container text-center">
+      <div>
+        <h1 className=" text-6xl py-4"> Episodes </h1>
         <div className={podcastStyle.grid}>
           {podcasts && podcasts.map((podcast) => <EspCard podcast={podcast} />)}
         </div>
