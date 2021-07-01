@@ -1,5 +1,5 @@
 import { API_URL } from "../utils/urls";
-import EspCard from "../componets/EspCard";
+import EspCard from "../components/EspCard";
 import podcastStyle from "../styles/Podcast.module.scss";
 const Episodes = ({ podcasts }) => {
   return (
