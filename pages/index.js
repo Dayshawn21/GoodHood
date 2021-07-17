@@ -33,6 +33,7 @@ export const getStaticProps = async () => {
     props: {
       podcasts,
       products: JSON.parse(JSON.stringify(products)),
+      revalidate: 100,
     },
   };
 };

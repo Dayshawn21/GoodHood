@@ -24,6 +24,7 @@ export const getStaticProps = async () => {
   return {
     props: {
       podcasts,
+      revalidate: 100,
     },
   };
 };

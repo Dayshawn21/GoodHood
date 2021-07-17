@@ -1,5 +1,7 @@
 import Image from "next/image";
+import Router from "next/router";
 import Link from "next/link";
+import { getCart } from "../utils/Cart";
 
 const Navbars = () => {
   return (
@@ -42,13 +44,13 @@ const Navbars = () => {
             </Link>
           </li>
 
-          {/* <li className="border-t md:border-none">
-            <Link href={`/Cart`}>
+          <li className="border-t md:border-none">
+            <Link href={`/cart`}>
               <a className="block md:inline-block px-2 py-3 no-underline text-grey-darkest hover:text-grey-darker ">
                 <i class="fas fa-shopping-cart"></i>
               </a>
             </Link>
-          </li> */}
+          </li>
         </ul>
       </nav>
     </div>

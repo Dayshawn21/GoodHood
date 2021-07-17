@@ -2,30 +2,94 @@ import React, { useState, useEffect } from "react";
 
 import client from "../../shopify/shopify";
 import Image from "next/image";
+import Select from "react-select";
 
-const Product = ({ product, checkout }) => {
+const parseData = (data) => {
+  return JSON.parse(JSON.stringify(data));
+};
+const getDataFromStorage = (key) => {
+  const storage = window.localStorage;
+  return JSON.parse(storage.getItem(key));
+};
+const setDataToStorage = (key, data) => {
+  const storage = window.localStorage;
+  storage.setItem(key, JSON.stringify(data));
+};
+
+const Product = ({ product }) => {
   const [amount, setAmount] = useState(1);
-  const [isCheckoutHasItem, setIsCheckoutHasItem] = useState();
-  const [selectedVariant, setSelectedVariant] = useState("");
+  const [checkout, setCheckout] = useState(null);
+  const [checkoutHasItem, setCheckoutHasItem] = useState(false);
+  const [selectedVariant, setSelectedVariant] = useState(0);
   const [selectedImage, setSelectedImage] = useState(0);
   const variant = product.variants[0];
 
-  const addItemsToAdd = () => {
-    const checkoutId = checkout.id;
-    const lineItemsToAdd = [
-      {
-        variantId: variant.id,
-        quantity: amount,
-        customAttributes: [],
-      },
-    ];
+  console.log(product.variants);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const tempCheckout = getDataFromStorage("checkout");
+      if (tempCheckout) {
+        tempCheckout.lineItems &&
+          tempCheckout.lineItems.forEach((lineItem) => {
+            if (lineItem.title === product.title) {
+              setAmount(lineItem.quantity);
+              setCheckoutHasItem(true);
+            }
+          });
+        setCheckout(tempCheckout);
+        console.log("this is useEffect log ==>", tempCheckout);
+      }
+    }
+  }, []);
 
-    client.checkout
-      .addLineItems(checkoutId, lineItemsToAdd)
-      .then((checkout) => {
-        console.log(JSON.parse(JSON.stringify(checkout)));
-        console.log(checkout.lineItems);
-      });
+  const addItemToCart = async () => {
+    try {
+      let checkoutTemp = null;
+      if (getDataFromStorage("checkout")) {
+        checkoutTemp = getDataFromStorage("checkout");
+      } else {
+        checkoutTemp = await client.checkout.create();
+      }
+      let checkout = parseData(checkoutTemp);
+      const checkoutId = checkout.id;
+      const lineItemsToAdd = [
+        {
+          variantId: variant.id,
+
+          quantity: amount,
+        },
+      ];
+
+      checkout = await client.checkout.addLineItems(checkoutId, lineItemsToAdd);
+      console.log(parseData(checkout));
+      setCheckout(parseData(checkout));
+      setDataToStorage("checkout", checkout);
+      setCheckoutHasItem(true);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const updateCheckout = async () => {
+    try {
+      const [lineItem] = checkout.lineItems.filter(
+        (lineItem) => lineItem.title === product.title
+      );
+      const checkoutId = checkout.id;
+      const lineItemToUpdate = [
+        {
+          id: lineItem.id,
+          quantity: amount,
+        },
+      ];
+      console.log(lineItemToUpdate, checkoutId);
+      const tempCheckout = await client.checkout.updateLineItems(
+        checkoutId,
+        lineItemToUpdate
+      );
+      setDataToStorage("checkout", tempCheckout);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -52,18 +116,27 @@ const Product = ({ product, checkout }) => {
       </div>
       <div className="py-4">
         <h1 className="extrabold text-3xl">{product.title}</h1>
-        <h1 className="text-2xl py-3">${variant.priceV2.amount}</h1>
+        {/* <h1 className="text-2xl py-3">${variant.priceV2.amount}</h1> */}
         <h1 className="text-base">{product.description}</h1>
+
         <div className="py-4 ">
           {product.options.map(({ name, id, values }) => {
             return (
               <label className="mr-3">
                 {name}:
                 <div className="inline-block relative ">
-                  <select className="  block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                  <select
+                    value={selectedVariant}
+                    onChange={(e) => {
+                      setSelectedVariant(e.target.value);
+                    }}
+                    className="  block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+                  >
                     {values &&
                       values.map(({ i, value }) => (
-                        <option key={i}>{value}</option>
+                        <option key={i} value={value}>
+                          {value}
+                        </option>
                       ))}
                   </select>
                   <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
@@ -81,20 +154,40 @@ const Product = ({ product, checkout }) => {
           })}
         </div>
 
-        <input
-          type="number"
-          className="flex-1 py-2 border-b-2 border-gray-400 focus:border-green-400 
-          text-gray-600 placeholder-gray-400 
-          outline-none"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-        />
-        <button
-          className="bg-blue-500 ml-4 rounded-full font-bold text-white px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-600"
-          onClick={addItemsToAdd}
-        >
-          Add to Cart
-        </button>
+        <div class="flex flex-wrap">
+          <div class="flex">
+            <input
+              type="text"
+              value={amount}
+              value={amount}
+              onChange={() => setAmount(amount + 1)}
+              class="flex-1 py-2 border-b-2 border-gray-400 focus:border-green-400 
+              text-gray-600 placeholder-gray-400 "
+            />
+          </div>
+          <div class="flex flex-col">
+            <button
+              class="text-white text-center text-md font-semibold rounded-tr-md px-1 bg-blue-500 focus:bg-gray-600 focus:outline-none border border-gray-800 focus:border-gray-600"
+              value={amount}
+              onClick={(e) => setAmount(amount + 1)}
+            >
+              +
+            </button>
+            <button
+              class="text-white text-center text-md font-semibold rounded-br-md px-1 bg-blue-500 focus:bg-gray-600 focus:outline-none border border-gray-800 focus:border-gray-600"
+              value={amount}
+              onClick={(e) => setAmount(amount - 1)}
+            >
+              -
+            </button>
+          </div>
+          <button
+            className="bg-blue-500 ml-4 rounded-full font-bold text-white px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-600"
+            onClick={!checkoutHasItem ? addItemToCart : updateCheckout}
+          >
+            Add to Cart
+          </button>
+        </div>
       </div>
     </div>
   );
@@ -103,12 +196,10 @@ const Product = ({ product, checkout }) => {
 export const getServerSideProps = async (context) => {
   const { slug } = context.params;
   const product = await client.product.fetchByHandle(slug);
-  const checkout = await client.checkout.create();
 
   return {
     props: {
       product: JSON.parse(JSON.stringify(product)),
-      checkout: JSON.parse(JSON.stringify(checkout)),
     },
   };
 };

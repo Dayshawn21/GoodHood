@@ -96,6 +96,7 @@ export const getServerSideProps = async ({ query: { slug } }) => {
   return {
     props: {
       podcast: podcasts[0],
+      revalidate: 100,
     },
   };
 };
