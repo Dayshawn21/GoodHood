@@ -22,7 +22,7 @@ const Product = ({ product }) => {
   const [checkoutHasItem, setCheckoutHasItem] = useState(false);
   const [selectedVariant, setSelectedVariant] = useState([]);
   const [selectedImage, setSelectedImage] = useState(0);
-  const variant = product.variants[selectedVariant];
+  const variant = product.variants[0];
   console.log(selectedVariant);
   console.log(product);
   useEffect(() => {
