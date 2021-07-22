@@ -56,7 +56,7 @@ const Product = ({ product }) => {
 
       const lineItemsToAdd = [
         {
-          variantId,
+          variantId: variant.id,
 
           quantity: amount,
           customAttributes: [],
@@ -94,12 +94,10 @@ const Product = ({ product }) => {
       console.log(error);
     }
   };
-  const options =
-    product.options.values &&
-    product.options.values.map(({ id, title, values }) => ({
-      value: title,
-      label: title,
-    }));
+  const options = product.variants.map(({ id, title, values }) => ({
+    value: title,
+    label: title,
+  }));
 
   return (
     <div key={product.id} className="py-3 md:grid grid-cols-2 container">
