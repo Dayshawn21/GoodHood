@@ -63,22 +63,30 @@ const Cart = () => {
                     src={item.variant.image.src}
                   />
                 </div>
-                <div className="text-center items-center">
+                <div className="text-center items-center px-6">
                   <h1>{item.title}</h1>
-                  <p>${item.variant.price}</p>
+
                   <p>{item.quantity}</p>
                   <p>{item.variant.title}</p>
+                  <p>${item.variant.price * item.quantity} </p>
                 </div>
                 <button onClick={() => removeItemFromCart(checkout, item)}>
-                  {" "}
-                  remove{" "}
+                  <i
+                    class="fas fa-trash text-red-700"
+                    style={{ fontSize: "1.5rem" }}
+                  ></i>
                 </button>
               </div>
             );
           })}
       </ul>
-
-      <a href={checkout.webUrl}>Proceed to checkout </a>
+      <div className="py-4">
+        <button className="bg-blue-500 rounded-full font-bold text-white px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-600">
+          <a href={checkout.webUrl}>
+            Proceed to checkout ${checkout.totalPrice}
+          </a>
+        </button>
+      </div>
     </div>
   );
 };

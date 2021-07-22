@@ -46,7 +46,7 @@ const Mic = () => {
             <div>
               <img
                 class="w-full h-72 "
-                src="/img/justyn.jpg"
+                src="/img/jay.jpg"
                 alt="Profile image"
               />
             </div>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import client from "../../shopify/shopify";
 import Image from "next/image";
-import Select from "react-select";
+import Select from "react-dropdown-select";
 
 const parseData = (data) => {
   return JSON.parse(JSON.stringify(data));
@@ -20,11 +20,11 @@ const Product = ({ product }) => {
   const [amount, setAmount] = useState(1);
   const [checkout, setCheckout] = useState(null);
   const [checkoutHasItem, setCheckoutHasItem] = useState(false);
-  const [selectedVariant, setSelectedVariant] = useState(0);
+  const [selectedVariant, setSelectedVariant] = useState([]);
   const [selectedImage, setSelectedImage] = useState(0);
-  const variant = product.variants[0];
-
-  console.log(product.variants);
+  const variant = product.variants[selectedVariant];
+  console.log(selectedVariant);
+  console.log(product);
   useEffect(() => {
     if (typeof window !== "undefined") {
       const tempCheckout = getDataFromStorage("checkout");
@@ -50,13 +50,16 @@ const Product = ({ product }) => {
       } else {
         checkoutTemp = await client.checkout.create();
       }
+
       let checkout = parseData(checkoutTemp);
       const checkoutId = checkout.id;
+
       const lineItemsToAdd = [
         {
-          variantId: variant.id,
+          variantId,
 
           quantity: amount,
+          customAttributes: [],
         },
       ];
 
@@ -91,6 +94,12 @@ const Product = ({ product }) => {
       console.log(error);
     }
   };
+  const options =
+    product.options.values &&
+    product.options.values.map(({ id, title, values }) => ({
+      value: title,
+      label: title,
+    }));
 
   return (
     <div key={product.id} className="py-3 md:grid grid-cols-2 container">
@@ -120,38 +129,12 @@ const Product = ({ product }) => {
         <h1 className="text-base">{product.description}</h1>
 
         <div className="py-4 ">
-          {product.options.map(({ name, id, values }) => {
-            return (
-              <label className="mr-3">
-                {name}:
-                <div className="inline-block relative ">
-                  <select
-                    value={selectedVariant}
-                    onChange={(e) => {
-                      setSelectedVariant(e.target.value);
-                    }}
-                    className="  block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
-                  >
-                    {values &&
-                      values.map(({ i, value }) => (
-                        <option key={i} value={value}>
-                          {value}
-                        </option>
-                      ))}
-                  </select>
-                  <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                    <svg
-                      class="fill-current h-4 w-4"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                    </svg>
-                  </div>
-                </div>
-              </label>
-            );
-          })}
+          <h3>Size/Color</h3>
+          <Select
+            defaultValue={selectedVariant}
+            onChange={(selectedVariant) => setSelectedVariant(selectedVariant)}
+            options={options}
+          />
         </div>
 
         <div class="flex flex-wrap">
