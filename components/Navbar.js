@@ -24,7 +24,7 @@ const Navbars = () => {
           className="menu-icon block cursor-pointer md:hidden px-2 py-3 relative select-none"
           for="menu-btn"
         >
-          <span className="navicon bg-grey-darkest flex items-center relative"></span>
+          <span className="navicon bg-white flex items-center relative"></span>
         </label>
 
         <ul className="menu border-b md:border-none flex justify-end list-reset m-0 w-full md:w-auto">
