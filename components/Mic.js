@@ -23,22 +23,31 @@ const Mic = () => {
 
             <div class="pb-10 uppercase text-center tracking-wide flex justify-center">
               <div class="posts">
-                <i
-                  class="fab fa-twitter text-blue-700"
-                  style={{ fontSize: "2.5rem" }}
-                ></i>
+                <a href="https://twitter.com/JuiceInAllHoods" target="_blank">
+                  <i
+                    class="fab fa-twitter text-blue-700 "
+                    style={{ fontSize: "2.5rem" }}
+                  ></i>
+                </a>
               </div>
               <div class="followers">
-                <i
-                  class="fab fa-facebook-f text-blue-700 mx-4"
-                  style={{ fontSize: "2.5rem" }}
-                ></i>
+                <a href="https://www.facebook.com/justynpolk" target="_blank">
+                  <i
+                    class="fab fa-facebook-f text-blue-700 mx-4 "
+                    style={{ fontSize: "2.5rem" }}
+                  ></i>
+                </a>
               </div>
               <div class="following">
-                <i
-                  class="fab fa-instagram text-blue-700"
-                  style={{ fontSize: "2.5rem" }}
-                ></i>
+                <a
+                  href="https://www.instagram.com/juiceinthehood/"
+                  target="_blank"
+                >
+                  <i
+                    class="fab fa-instagram text-blue-700 "
+                    style={{ fontSize: "2.5rem" }}
+                  ></i>
+                </a>
               </div>
             </div>
           </div>
@@ -58,17 +67,12 @@ const Mic = () => {
 
             <div class="pb-10 uppercase text-center tracking-wide flex justify-center">
               <div class="posts">
-                <i
-                  class="fab fa-twitter text-blue-700"
-                  style={{ fontSize: "2.5rem" }}
-                ></i>
-              </div>
-
-              <div class="following">
-                <i
-                  class="fab fa-instagram text-blue-700 ml-4"
-                  style={{ fontSize: "2.5rem" }}
-                ></i>
+                <a href="https://twitter.com/Dacribjo" target="_blank">
+                  <i
+                    class="fab fa-twitter text-blue-700 mx-4  "
+                    style={{ fontSize: "2.5rem" }}
+                  ></i>
+                </a>
               </div>
             </div>
           </div>
@@ -82,28 +86,37 @@ const Mic = () => {
             </div>
 
             <div class="pt-6 pb-8 text-gray-600 text-center">
-              <p className="text-3xl">Jimmy </p>
+              <p className="text-3xl">Jimmmie Smooda </p>
               <p class="text-2xl"> Co Host</p>
             </div>
 
             <div class="pb-10 uppercase text-center tracking-wide flex justify-center">
               <div class="posts">
-                <i
-                  class="fab fa-twitter text-blue-700"
-                  style={{ fontSize: "2.5rem" }}
-                ></i>
+                <a href="https://twitter.com/JimmieInTheHood" target="_blank">
+                  <i
+                    class="fab fa-twitter text-blue-700 "
+                    style={{ fontSize: "2.5rem" }}
+                  ></i>
+                </a>
               </div>
               <div class="followers">
-                <i
-                  class="fab fa-facebook-f text-blue-700 mx-4"
-                  style={{ fontSize: "2.5rem" }}
-                ></i>
+                <a href="https://www.facebook.com/jimmysmooda" target="_blank">
+                  <i
+                    class="fab fa-facebook-f text-blue-700 mx-4 "
+                    style={{ fontSize: "2.5rem" }}
+                  ></i>
+                </a>
               </div>
               <div class="following">
-                <i
-                  class="fab fa-instagram text-blue-700"
-                  style={{ fontSize: "2.5rem" }}
-                ></i>
+                <a
+                  href="https://www.instagram.com/jimmieinthehood"
+                  target="_blank"
+                >
+                  <i
+                    class="fab fa-instagram text-blue-700 "
+                    style={{ fontSize: "2.5rem" }}
+                  ></i>
+                </a>
               </div>
             </div>
           </div>
@@ -119,16 +132,26 @@ const Mic = () => {
 
             <div class="pb-10 uppercase text-center tracking-wide flex justify-center">
               <div class="followers">
-                <i
-                  class="fab fa-facebook-f text-blue-700 mr-4"
-                  style={{ fontSize: "2.5rem" }}
-                ></i>
+                <a
+                  href="https://www.facebook.com/kaylin.crowder"
+                  target="_blank"
+                >
+                  <i
+                    class="fab fa-facebook-f text-blue-700 mx-4 "
+                    style={{ fontSize: "2.5rem" }}
+                  ></i>
+                </a>
               </div>
               <div class="following">
-                <i
-                  class="fab fa-instagram text-blue-700"
-                  style={{ fontSize: "2.5rem" }}
-                ></i>
+                <a
+                  href="https://www.instagram.com/theyoungog_74"
+                  target="_blank"
+                >
+                  <i
+                    class="fab fa-instagram text-blue-700 "
+                    style={{ fontSize: "2.5rem" }}
+                  ></i>
+                </a>
               </div>
             </div>
           </div>

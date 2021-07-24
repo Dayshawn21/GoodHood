@@ -16,6 +16,7 @@ const Header = () => {
               <div>
                 <a
                   href="https://podcasts.apple.com/us/podcast/good-in-the-hood-podcast/id1454831531"
+                  target="_blank"
                   type="button"
                   className="bg-blue-500 rounded-full font-bold text-white px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-600"
                 >
@@ -26,6 +27,7 @@ const Header = () => {
               <div className="px-3  ">
                 <a
                   href="https://open.spotify.com/show/3rClGGBu1MvCFDrNb9Klql?si=2_EN6TPFQZC7MHLJugQkuQ&nd=1"
+                  target="_blank"
                   type="button"
                   className="bg-blue-500 rounded-full font-bold text-white px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-600"
                 >
@@ -35,6 +37,7 @@ const Header = () => {
               <div>
                 <a
                   href="https://www.youtube.com/channel/UCrPlrMJowXVgWUW9yWfP7pg"
+                  target="_blank"
                   type="button"
                   className="bg-blue-500 rounded-full font-bold text-white px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-600 "
                 >

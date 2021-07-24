@@ -75,10 +75,7 @@ function CartTable({ cart }) {
                   className=""
                   onClick={() => updateItem(item.variantId, 0)}
                 >
-                  <FontAwesomeIcon
-                    icon={faTimes}
-                    className="w-8 h-8 text-palette-primary border border-palette-primary p-1 hover:bg-palette-lighter"
-                  />
+                  <h3 className="text-red-600">X</h3>
                 </button>
               </td>
             </tr>
