@@ -2,17 +2,20 @@ import Head from "next/head";
 import Nav from "./Navbar";
 import Footer from "./Footer.js";
 import layout from "../styles/Layout.module.scss";
+import { CartProvider } from "../context/Store";
 
 const Layout = ({ children }) => {
   return (
-    <div>
-      <Head></Head>
-      <Nav />
+    <CartProvider>
+      <div>
+        <Head></Head>
+        <Nav />
 
-      <main> {children}</main>
+        <main> {children}</main>
 
-      <Footer></Footer>
-    </div>
+        <Footer></Footer>
+      </div>
+    </CartProvider>
   );
 };
 

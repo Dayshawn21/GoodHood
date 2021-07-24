@@ -3,13 +3,13 @@ import Link from "next/link";
 const MerchCard = ({ product }) => {
   return (
     <div className="py-3">
-      <Link href={`/products/${product.handle}`}>
+      <Link href={`/products/${product.node.handle}`}>
         <a>
           <div class="w-full max-w-sm mx-auto rounded-md shadow-lg overflow-hidden">
             <div
               class="flex items-end justify-end h-72 w-full  bg-cover"
               style={{
-                backgroundImage: `url(${product.images[0].src})`,
+                backgroundImage: `url(${product.node.images.edges[0].node.originalSrc})`,
 
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat",
@@ -31,9 +31,9 @@ const MerchCard = ({ product }) => {
               </button>
             </div>
             <div class="px-5 py-3 bg-gray-400">
-              <h3 class="text-gray-700 text-3xl">{product.title}</h3>
+              <h3 class="text-gray-700 text-3xl">{product.node.title}</h3>
               <span class="text-gray-500 mt-2 text-2xl">
-                ${product.variants[0].priceV2.amount}
+                ${product.node.variants.edges[0].node.price}
               </span>
             </div>
           </div>

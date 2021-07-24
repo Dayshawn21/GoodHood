@@ -8,6 +8,7 @@ import Contact from "../components/Contactform";
 
 import { API_URL } from "../utils/urls";
 import Header from "../components/Header";
+import { getAllProductsInCollection } from "../shopify/shopify";
 
 const Home = ({ podcasts, products }) => {
   return (
@@ -27,12 +28,13 @@ export const getStaticProps = async () => {
   const podcasts = await podcast_res.json();
 
   // return Products
-  const products = await client.product.fetchAll();
-
+  // const products = await client.product.fetchAll();
+  const products = await getAllProductsInCollection();
   return {
     props: {
       podcasts,
-      products: JSON.parse(JSON.stringify(products)),
+      products,
+      // products: JSON.parse(JSON.stringify(products)),
       revalidate: 100,
     },
   };
