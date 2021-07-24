@@ -1,5 +1,5 @@
 import MerchCard from "../components/MerchCard";
-import client from "../shopify/shopify";
+import { getAllProductsInCollection } from "../shopify/shopify";
 
 import merchStyle from "../styles/Merch.module.scss";
 
@@ -19,7 +19,7 @@ const Merchs = ({ products }) => {
 export const getStaticProps = async () => {
   // Fetch Products
 
-  const products = await client.product.fetchAll();
+  const products = await getAllProductsInCollection();
   // return Products
 
   return {
