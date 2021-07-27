@@ -15,9 +15,14 @@ const EspCard = ({ podcast }) => {
 
             <div class="p-4 bg-gray-400">
               <h3 class="font-medium text-gray-700 text-3xl my-2 ">
+                EP{podcast.episode}
+              </h3>
+              <h3 class="font-medium text-gray-700 text-3xl my-2 ">
                 {podcast.title}
               </h3>
-              <p className="text-lg text-gray-700">{podcast.upload}</p>
+              <p className="text-lg text-gray-700">
+                {new Date(podcast.upload).toLocaleDateString("en-US")}
+              </p>
               <div class="mt-3">
                 <a
                   href=""

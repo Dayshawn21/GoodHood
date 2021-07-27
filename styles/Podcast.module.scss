@@ -1,31 +1,31 @@
 .podcast {
-	h1 {
-		font-size: 5rem;
-		text-decoration: underline;
-	}
-	h2 {
-		text-align: center;
-		font-size: 4rem;
-		text-decoration: underline;
-	}
-	h3 {
-		font-size: 2.5rem;
-	}
-	p {
-		font-size: 1.5rem;
-	}
+  h1 {
+    font-size: 5rem;
+    text-decoration: underline;
+  }
+  h2 {
+    text-align: center;
+    font-size: 4rem;
+    text-decoration: underline;
+  }
+  h3 {
+    font-size: 2.5rem;
+  }
+  p {
+    font-size: 1.5rem;
+  }
 }
 
 .grid {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
 }
 
 @media only screen and (max-width: 600px) {
-	.grid {
-		display: grid;
-		grid-template-columns: repeat(1, 1fr);
-		grid-gap: 2rem;
-	}
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 2rem;
+  }
 }

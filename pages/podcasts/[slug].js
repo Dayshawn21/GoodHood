@@ -13,7 +13,9 @@ const Podcast = ({ podcast }) => {
             height="400"
           />
           <div className="grid grid-cols-2 gap-12">
-            <h1 className="text-lg">{podcast.upload}</h1>
+            <h1 className="text-lg">
+              {new Date(podcast.upload).toLocaleDateString("en-US")}
+            </h1>
             <h1 className="text-lg">{podcast.time} Min</h1>
           </div>
         </div>
