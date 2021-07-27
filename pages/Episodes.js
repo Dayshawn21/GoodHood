@@ -14,7 +14,7 @@ const Episodes = ({ podcasts, total, page }) => {
         </div>
         <div className="py-3">
           {page > 1 && (
-            <Link href={`/episodes?page=${page - 1}`}>
+            <Link href={`/Episodes?page=${page - 1}`}>
               <a class="hover:bg-blue-500 rounded-full text-xl py-2 px-3 font-semibold hover:text-white bg-blue-600 text-white">
                 {" "}
                 Prev
@@ -22,7 +22,7 @@ const Episodes = ({ podcasts, total, page }) => {
             </Link>
           )}
           {page < lastPage && (
-            <Link href={`/episodes?page=${page + 1}`}>
+            <Link href={`/Episodes?page=${page + 1}`}>
               <a class="hover:bg-blue-500 rounded-full text-xl py-2 px-3 font-semibold hover:text-white bg-blue-600 text-white">
                 {" "}
                 Next
