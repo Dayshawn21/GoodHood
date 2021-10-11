@@ -1,29 +1,29 @@
 import { fromImagetoUrl } from "../utils/urls";
 import Link from "next/link";
+import Image from "next/image";
 
 const EspCard = ({ podcast }) => {
+  console.log(podcast);
   return (
     <div className="text-center py-3  ">
       <Link href={`/podcasts/${podcast.slug}`}>
         <a>
-          <div class="w-full max-w-sm mx-auto rounded-md shadow-lg overflow-hidden">
-            <img
-              src={fromImagetoUrl(podcast.image)}
-              alt=""
-              class="overflow-hidden h-72 w-full "
-            />
+          <div class=" w-full max-w-sm mx-auto rounded-md shadow-lg">
+            <div class="h-60 w-auto relative">
+              <Image src={podcast.image.formats.large.url} layout="fill" />
+            </div>
 
-            <div class="p-4 bg-gray-400">
-              <h3 class="font-medium text-gray-700 text-3xl my-2 ">
+            <div class="p-2 bg-gray-400">
+              <h3 class="font-medium text-gray-700 text-2xl  ">
                 EP{podcast.episode}
               </h3>
-              <h3 class="font-medium text-gray-700 text-3xl my-2 ">
+              <h3 class="font-medium text-gray-700 text-2xl  ">
                 {podcast.title}
               </h3>
               <p className="text-lg text-gray-700">
                 {new Date(podcast.upload).toLocaleDateString("en-US")}
               </p>
-              <div class="mt-3">
+              <div class="py-2">
                 <a
                   href=""
                   class="hover:bg-blue-500 rounded-full text-xl py-2 px-3 font-semibold hover:text-white bg-blue-600 text-white"

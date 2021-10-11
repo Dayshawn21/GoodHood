@@ -2,6 +2,7 @@ import Link from "next/link";
 import { API_URL } from "../utils/urls";
 import EspCard from "../components/EspCard";
 import podcastStyle from "../styles/Podcast.module.scss";
+
 const PER_PAGE = 9;
 const Episodes = ({ podcasts, total, page }) => {
   const lastPage = Math.ceil(total / PER_PAGE);
@@ -9,7 +10,7 @@ const Episodes = ({ podcasts, total, page }) => {
     <div className="container text-center">
       <div>
         <h1 className=" text-6xl py-4"> Episodes </h1>
-        <div className={podcastStyle.grid}>
+        <div className="grid md:grid-cols-4 gap-4">
           {podcasts && podcasts.map((podcast) => <EspCard podcast={podcast} />)}
         </div>
         <div className="py-3">

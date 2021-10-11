@@ -4,12 +4,13 @@ const Header = () => {
     <div className="py-3 bg-black  text-white ">
       <div className="container">
         <div className="text-center">
-          <Image
-            className="mx-auto "
-            src="/PURPLE_360x.jpg"
-            width={300}
-            height={300}
-          />
+          <div class="h-64 w-auto relative">
+            <Image
+              src="https://res.cloudinary.com/dlofyd7mt/image/upload/v1625949497/PURPLE_360x_937e634e31_5ccc59cee9.png"
+              layout="fill"
+              objectFit="contain"
+            />
+          </div>
           <div className="text-center py-3  mx-auto ">
             <h2 className="text-2xl">LISTEN & SUBSCRIBE ON:</h2>
             <div className="py-3  flex justify-center">

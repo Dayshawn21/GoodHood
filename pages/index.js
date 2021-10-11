@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import client from "../shopify/shopify";
+import Router from "next/router";
 import Mic from "../components/Mic";
 import Espisodes from "../components/Episodes";
 import Merch from "../components/Merch";
@@ -11,6 +11,9 @@ import Header from "../components/Header";
 import { getAllProductsInCollection } from "../shopify/shopify";
 
 const Home = ({ podcasts, products }) => {
+  if (process.browser) {
+    //Runs only on client side
+  }
   return (
     <div>
       <Header></Header>
@@ -25,7 +28,7 @@ const Home = ({ podcasts, products }) => {
 
 export const getStaticProps = async () => {
   const podcast_res = await fetch(
-    `${API_URL}/podcasts?_sort=upload:DESC&_limit=6`
+    `${API_URL}/podcasts?_sort=upload:DESC&_limit=8`
   );
   const podcasts = await podcast_res.json();
 

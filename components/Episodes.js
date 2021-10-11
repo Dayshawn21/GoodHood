@@ -8,7 +8,7 @@ const Episodes = ({ podcasts }) => {
       <div>
         <h2 className="text-5xl">Latest Episodes</h2>
 
-        <div className="grid md:grid-cols-3 gap-4 ">
+        <div className="grid md:grid-cols-4 gap-4 ">
           {podcasts && podcasts.map((podcast) => <EspCard podcast={podcast} />)}
         </div>
         <div className="py-3 text-center">

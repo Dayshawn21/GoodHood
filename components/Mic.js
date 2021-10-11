@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 const Mic = () => {
   return (
@@ -8,9 +9,10 @@ const Mic = () => {
 
         <div className="grid md:grid-cols-4 gap-4 py-3">
           <div class="container mx-auto max-w-sm rounded-lg overflow-hidden shadow-lg my-2 bg-white">
-            <div>
-              <img
-                class="w-full h-72  "
+            <div class="h-64 w-auto relative">
+              <Image
+                layout="fill"
+                objectFit="contain"
                 src="/img/justyn.jpg"
                 alt="Profile image"
               />
@@ -52,9 +54,10 @@ const Mic = () => {
             </div>
           </div>
           <div class="container mx-auto max-w-sm rounded-lg overflow-hidden shadow-lg my-2 bg-white">
-            <div>
-              <img
-                class="w-full h-72 "
+            <div class="h-64 w-auto relative">
+              <Image
+                layout="fill"
+                objectFit="contain"
                 src="/img/jay.jpg"
                 alt="Profile image"
               />
@@ -77,9 +80,10 @@ const Mic = () => {
             </div>
           </div>
           <div class="container mx-auto max-w-sm rounded-lg overflow-hidden shadow-lg my-2 bg-white">
-            <div>
-              <img
-                class="w-full h-72"
+            <div class="h-64 w-auto relative">
+              <Image
+                layout="fill"
+                objectFit="contain"
                 src="/img/jimmy.jpg"
                 alt="Profile image"
               />
@@ -121,12 +125,17 @@ const Mic = () => {
             </div>
           </div>
           <div class="container mx-auto max-w-sm rounded-lg overflow-hidden shadow-lg my-2 bg-white">
-            <div>
-              <img class="w-full h-72" src="/img/kc.jpg" alt="Profile image" />
+            <div class="h-64 w-auto relative">
+              <Image
+                layout="fill"
+                objectFit="contain "
+                src="/img/kc.jpg"
+                alt="Profile image"
+              />
             </div>
 
             <div class="pt-6 pb-8 text-gray-600 text-center">
-              <p className="text-3xl">KC </p>
+              <p className="text-3xl">Yogi </p>
               <p class="text-2xl"> Co Host</p>
             </div>
 
