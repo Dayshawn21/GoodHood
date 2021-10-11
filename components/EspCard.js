@@ -11,7 +11,7 @@ const EspCard = ({ podcast }) => {
           <div class=" w-full max-w-sm mx-auto rounded-md shadow-lg">
             <div class="h-60 w-auto relative">
               <Image
-                src={podcast.image.formats.large.url}
+                src={podcast.image.formats.small.url}
                 layout="fill"
                 objectFit="contain"
               />
